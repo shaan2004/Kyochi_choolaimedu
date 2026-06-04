@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Menu, X, Phone, Clock, MapPin, Sparkles } from 'lucide-react';
+import { Menu, X, Phone, Clock, MapPin, Sparkles, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OutlineButton } from './OutlineButton';
 import { cn } from '@/lib/utils';
@@ -126,16 +126,21 @@ export const Navbar: React.FC = () => {
               ))}
             </div>
 
-            {/* CTA Action Buttons */}
-            <div className="hidden lg:flex items-center gap-3">
+            {/* Contact Info & CTA */}
+            <div className="hidden lg:flex items-center gap-4">
               <a
-                href="https://www.instagram.com/kyochi_choolaimedu/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit Instagram Profile"
-                className="p-2.5 rounded-xl border border-gold-border/30 text-gold hover:bg-gold/15 transition-all duration-300 flex items-center justify-center cursor-pointer"
+                href="tel:+919080389223"
+                className="flex items-center gap-1.5 text-sm text-text-primary/80 hover:text-gold transition-colors duration-300"
               >
-                <InstagramIcon size={20} />
+                +91 90803 89223
+                <Phone size={14} className="text-gold" />
+              </a>
+              <a
+                href="mailto:hello@kyochi.in"
+                className="flex items-center gap-1.5 text-sm text-text-primary/80 hover:text-gold transition-colors duration-300"
+              >
+                hello@kyochi.in
+                <Mail size={14} className="text-gold" />
               </a>
               <OutlineButton
                 href="#booking"
@@ -184,14 +189,20 @@ export const Navbar: React.FC = () => {
               ))}
               <div className="pt-6 flex flex-col gap-3">
                 <a
-                  href="https://www.instagram.com/kyochi_choolaimedu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="tel:+919080389223"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full py-3.5 rounded-xl border border-gold-border/30 text-gold hover:bg-gold/10 transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-sm cursor-pointer"
                 >
-                  <InstagramIcon size={18} />
-                  Follow us on Instagram
+                  <Phone size={18} />
+                  +91 90803 89223
+                </a>
+                <a
+                  href="mailto:hello@kyochi.in"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full py-3.5 rounded-xl border border-gold-border/30 text-gold hover:bg-gold/10 transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-sm cursor-pointer"
+                >
+                  <Mail size={18} />
+                  hello@kyochi.in
                 </a>
                 <OutlineButton
                   href="#booking"

@@ -12,11 +12,26 @@ interface ServiceCardProps {
   onBook?: (serviceTitle: string) => void;
 }
 
+const serviceBgImages: Record<string, string> = {
+  'royal-reflexology': '/assets/royal-foot.png',
+  'de-stress': '/assets/de-stress.png',
+  'chronic-pain': '/assets/chronic-pain.png',
+  'detox-reflexology': '/assets/detox.png',
+  'sleep-inducing': '/assets/sleep-inducing.png',
+  'neuropathy-care': '/assets/neuropathy.png',
+  'senior-mobility': '/assets/senior-mobility.png',
+  'lymphatic-drainage': '/assets/lympatic-drainage.png',
+  'sports-recovery': '/assets/sports-recovery.png',
+  'head-shoulder-foot-combo': '/assets/head,shoulder-and-foot.png',
+};
+
 export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => {
-  const { title, excerpt, durationMin, priceInr, tags, iconName } = service;
+  const { id, title, excerpt, tags, iconName } = service;
   
   // Resolve Lucide icon component dynamically
   const IconComponent = (Icons as any)[iconName] || Icons.HelpCircle;
+
+  const bgImage = serviceBgImages[id] || '/assets/service.png';
 
   const handleBookClick = () => {
     if (onBook) {
@@ -41,26 +56,35 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => 
     <motion.div
       initial={{ borderColor: "rgba(201, 168, 76, 0.09)" }}
       whileHover={{ 
-        y: -8,
-        scale: 1.02,
-        borderColor: "rgba(201, 168, 76, 0.4)",
-        boxShadow: "0 20px 40px rgba(201, 168, 76, 0.12)"
+        y: -4,
+        scale: 1.01,
+        borderColor: "rgba(201, 168, 76, 0.45)",
+        boxShadow: "0 20px 40px rgba(0,0,0,0.4)"
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 22 }}
       className={cn(
-        "flex flex-col justify-between p-6.5 rounded-2xl bg-card-dark border border-gold-border-muted"
+        "flex flex-col w-full rounded-3xl border border-gold-border/30 overflow-hidden group shadow-xl relative min-h-[360px]"
       )}
     >
-      <div>
-        <div className="flex justify-between items-start mb-4.5">
-          <div className="p-3 rounded-xl bg-gold/10 border border-gold/20 text-gold">
-            <IconComponent size={22} className="stroke-[1.5]" aria-hidden="true" />
+      {/* Full Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
+        style={{ backgroundImage: `url('${bgImage}')` }}
+      />
+      {/* Dark gradient overlay for text readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/20 z-[1]" />
+
+      {/* Content overlaid on top of background */}
+      <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end flex-grow">
+        <div className="flex justify-between items-start mb-4">
+          <div className="p-2.5 rounded-xl bg-gold/10 border border-gold/20 text-gold backdrop-blur-sm">
+            <IconComponent size={20} className="stroke-[1.5]" aria-hidden="true" />
           </div>
           <div className="flex flex-wrap gap-1 justify-end">
             {tags.map((tag, idx) => (
               <span
                 key={idx}
-                className="text-[9px] font-bold tracking-wider uppercase bg-gold/5 text-gold-light border border-gold/10 px-2.5 py-0.5 rounded-full"
+                className="text-[9px] font-bold tracking-wider uppercase bg-gold/10 text-gold-light border border-gold/25 px-2.5 py-0.5 rounded-full backdrop-blur-sm"
               >
                 {tag}
               </span>
@@ -68,32 +92,23 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => 
           </div>
         </div>
 
-        <h3 className="font-display text-xl md:text-2xl font-medium text-text-primary mb-2">
+        <h3 className="font-display text-xl md:text-2xl font-medium text-text-primary mb-2.5 group-hover:text-gold-light transition-colors duration-300">
           {title}
         </h3>
         
-        <p className="text-sm text-text-primary/70 mb-4 line-clamp-3 leading-relaxed">
+        <p className="text-sm text-text-primary/80 mb-6 leading-relaxed font-light line-clamp-3">
           {excerpt}
         </p>
-      </div>
 
-      <div className="mt-4 pt-4 border-t border-gold-border/30">
-        <div className="flex justify-between items-baseline mb-4">
-          <span className="text-xs text-text-primary/55 flex items-center gap-1">
-            <Icons.Clock size={12} className="text-gold/60" /> {durationMin} Mins
-          </span>
-          <span className="text-base font-semibold text-gold tracking-wide">
-            ₹{priceInr}
-          </span>
+        <div className="pt-2">
+          <OutlineButton
+            onClick={handleBookClick}
+            ariaLabel={`Book ${title}`}
+            className="w-full md:w-[150px] py-2.5 text-xs md:text-sm font-semibold rounded-xl bg-black/40 backdrop-blur-sm border-gold-border/40 hover:bg-gold hover:text-black transition-all duration-300"
+          >
+            Book Now
+          </OutlineButton>
         </div>
-
-        <OutlineButton
-          onClick={handleBookClick}
-          ariaLabel={`Book ${title}`}
-          className="w-full py-2 text-xs md:text-sm font-semibold rounded-lg"
-        >
-          Book Now
-        </OutlineButton>
       </div>
     </motion.div>
   );
