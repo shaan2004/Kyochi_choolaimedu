@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Sparkles, Phone, Mail, MapPin, Clock, ExternalLink } from 'lucide-react';
 import { SERVICES } from '@/lib/data';
 
@@ -24,17 +25,13 @@ export const Footer: React.FC = () => {
         
         {/* Left Column: Brand & Tagline */}
         <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <div className="p-1.5 rounded-lg bg-gold/10 border border-gold/20 text-gold">
-              <Sparkles size={18} className="fill-current" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display text-xl font-bold tracking-widest text-gold uppercase">
-                Kyochi
-              </span>
-              <span className="text-[8px] uppercase tracking-[0.3em] text-gold-light/60 font-medium">
-                Art of Healing
-              </span>
+          <div className="flex items-center">
+            <div className="relative w-32 h-10">
+              <img 
+                src="/assets/logo.png?v=2" 
+                alt="Kyochi Art of Healing" 
+                className="w-full h-full object-contain"
+              />
             </div>
           </div>
           <p className="text-sm text-text-primary/60 leading-relaxed font-light">

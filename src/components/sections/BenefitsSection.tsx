@@ -39,12 +39,12 @@ export const BenefitsSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-14">
-          <SectionTag text="Brand Advantages" className="mb-4" />
+          <SectionTag text="Therapeutic Benefits" className="mb-4" />
           <h2 className="font-display text-3xl md:text-[44px] font-bold tracking-tight text-text-primary mb-4 leading-tight">
-            The Science of <span className="gold-shimmer-text">Deep Relief</span>
+            The Benefits of <span className="gold-shimmer-text">Foot Reflexology</span>
           </h2>
-          <p className="text-text-primary/70 font-light max-w-xl text-sm md:text-base leading-relaxed">
-            Discover the unique therapeutic standards that make Kyochi Choolaimedu Chennai's leading wellness destination.
+          <p className="text-text-primary/70 font-light max-w-2xl text-sm md:text-base leading-relaxed">
+            Discover how stimulating precise reflex points on the feet triggers natural biological healing throughout your organs and systems.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export const BenefitsSection: React.FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate={hasRevealed ? "show" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           {BENEFITS.map((benefit) => (
             <motion.div key={benefit.id} variants={itemVariants}>

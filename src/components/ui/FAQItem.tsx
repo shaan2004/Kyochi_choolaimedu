@@ -37,6 +37,7 @@ export const FAQItem: React.FC<FAQItemProps> = ({ faq, isOpen, onToggle }) => {
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            key="faq-content"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}

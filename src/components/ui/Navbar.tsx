@@ -1,10 +1,30 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Menu, X, Phone, Clock, MapPin, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OutlineButton } from './OutlineButton';
 import { cn } from '@/lib/utils';
+
+const InstagramIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+    <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+  </svg>
+);
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -80,18 +100,14 @@ export const Navbar: React.FC = () => {
             <a 
               href="#" 
               onClick={(e) => handleLinkClick(e, '#')}
-              className="flex items-center gap-2 group cursor-pointer focus:outline-none focus:ring-1 focus:ring-gold rounded"
+              className="flex items-center group cursor-pointer focus:outline-none focus:ring-1 focus:ring-gold rounded"
             >
-              <div className="p-1.5 rounded-lg bg-gold/10 border border-gold/20 text-gold group-hover:scale-105 transition-all duration-300">
-                <Sparkles size={18} className="fill-current" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-display text-xl md:text-2xl font-bold tracking-widest gold-gradient-text uppercase">
-                  Kyochi
-                </span>
-                <span className="text-[8px] uppercase tracking-[0.3em] text-gold-light/60 font-medium">
-                  Art of Healing
-                </span>
+              <div className="relative w-32 h-10 md:w-36 md:h-12 group-hover:scale-105 transition-all duration-300">
+                <img 
+                  src="/assets/logo.png?v=2" 
+                  alt="Kyochi Art of Healing" 
+                  className="w-full h-full object-contain"
+                />
               </div>
             </a>
 
@@ -110,8 +126,17 @@ export const Navbar: React.FC = () => {
               ))}
             </div>
 
-            {/* CTA Action Button */}
-            <div className="hidden lg:block">
+            {/* CTA Action Buttons */}
+            <div className="hidden lg:flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/kyochi_choolaimedu/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit Instagram Profile"
+                className="p-2.5 rounded-xl border border-gold-border/30 text-gold hover:bg-gold/15 transition-all duration-300 flex items-center justify-center cursor-pointer"
+              >
+                <InstagramIcon size={20} />
+              </a>
               <OutlineButton
                 href="#booking"
                 ariaLabel="Book reflexology appointment"
@@ -139,6 +164,7 @@ export const Navbar: React.FC = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            key="mobile-menu-drawer"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -156,7 +182,17 @@ export const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
-              <div className="pt-6">
+              <div className="pt-6 flex flex-col gap-3">
+                <a
+                  href="https://www.instagram.com/kyochi_choolaimedu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="w-full py-3.5 rounded-xl border border-gold-border/30 text-gold hover:bg-gold/10 transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-sm cursor-pointer"
+                >
+                  <InstagramIcon size={18} />
+                  Follow us on Instagram
+                </a>
                 <OutlineButton
                   href="#booking"
                   onClick={() => setIsMobileMenuOpen(false)}

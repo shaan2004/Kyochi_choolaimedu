@@ -115,64 +115,76 @@ export const SERVICES: Service[] = [
 
 export const BENEFITS: Benefit[] = [
   {
-    id: 'visually-impaired',
-    title: 'Visually Impaired Therapists',
-    description: 'Our therapists possess an extraordinary, highly-developed sense of touch, allowing them to detect blockages and tension with unmatched precision.',
-    iconName: 'EyeOff'
+    id: 'improve-sleep',
+    title: 'Improve Sleep',
+    description: 'Combats insomnia and regulates your natural circadian sleep cycle by stimulating nervous system and pineal gland reflexes.',
+    iconName: 'Moon'
   },
   {
-    id: 'ancient-techniques',
-    title: 'Authentic Reflexology Maps',
-    description: 'We follow traditional, clinically-proven reflex zones mapped to vital organs, avoiding simple foot rubbing for real therapeutic outcomes.',
-    iconName: 'Map'
+    id: 'reduce-stress',
+    title: 'Reduce Stress',
+    description: 'Lowers cortisol levels and calms an overactive nervous system by target-stimulating head and solar plexus zones.',
+    iconName: 'Activity'
   },
   {
-    id: 'tailored-pressure',
-    title: 'Customizable Pressure Scale',
-    description: 'Whether you prefer a soft, relaxing touch or intense, deep-tissue trigger point work, our specialists customize the therapy for your body.',
-    iconName: 'Sliders'
+    id: 'enhanced-circulation',
+    title: 'Enhanced Circulation',
+    description: 'Boosts oxygenated blood flow and lymphatic drainage throughout the body, reducing muscle fatigue and swelling.',
+    iconName: 'Heart'
   },
   {
-    id: 'premium-oils',
-    title: 'Gold Organic Oils',
-    description: 'We use premium, chemical-free massage oils infused with healing botanicals that nourish the skin without leaving a sticky residue.',
-    iconName: 'CheckCircle'
+    id: 'improves-digestion',
+    title: 'Improves Digestion',
+    description: 'Stimulates kidney, liver, and digestive reflex points to ease bloating, optimize metabolism, and promote gut health.',
+    iconName: 'Apple'
   },
   {
-    id: 'peaceful-ambience',
-    title: 'Tranquil Sound-Insulated Cabins',
-    description: 'Escape the bustle of Chennai in our temperature-controlled, ambient-lit private rooms designed to induce alpha brainwave relaxation.',
-    iconName: 'VolumeX'
+    id: 'body-mind-awareness',
+    title: 'Body-Mind Awareness',
+    description: 'Fosters a deeper connection between mental state and physical responses, increasing mindfulness and grounding.',
+    iconName: 'Brain'
   },
   {
-    id: 'hygiene-first',
-    title: 'Medical-Grade Hygiene',
-    description: 'We maintain a strict sanitization protocol with single-use disposable sheets, freshly laundered towels, and thoroughly sanitized tools.',
-    iconName: 'ShieldCheck'
+    id: 'relaxation',
+    title: 'Relaxation',
+    description: 'Induces deep systemic relaxation through soothing trigger-point work, releasing deep-seated muscular tension.',
+    iconName: 'Flower2'
   },
   {
-    id: 'free-consultation',
-    title: 'Pre-Therapy Mapping',
-    description: 'Every session includes a complimentary pulse review and reflex zone assessment to identify areas requiring specialized attention.',
-    iconName: 'ClipboardList'
+    id: 'pain-relief',
+    title: 'Pain Relief',
+    description: 'Alleviates plantar fasciitis, heel spurs, and lower body aches by relieving tension in local foot fascia and nerves.',
+    iconName: 'BriefcaseMedical'
   },
   {
-    id: 'herbal-foot-bath',
-    title: 'Traditional Herbal Soak',
-    description: 'Begin your treatment with a hot foot bath infused with Epsom salt, ginger, and essential oils to open pores and soften muscle fibers.',
-    iconName: 'Coffee'
+    id: 'boosts-energy',
+    title: 'Boosts Energy',
+    description: 'Revitalizes fatigued organs and clears energetic pathways, leaving you feeling active, light, and refreshed.',
+    iconName: 'Zap'
   },
   {
-    id: 'post-therapy-tea',
-    title: 'Detoxifying Herbal Brew',
-    description: 'Conclude your healing journey with a hot cup of our organic herbal tea formulation, flushing out toxins released during the session.',
-    iconName: 'Smile'
+    id: 'detoxifies',
+    title: 'Detoxifies',
+    description: 'Encourages rapid waste and toxin elimination by activating lymphatic drainage and vital cleansing organs.',
+    iconName: 'Droplets'
   },
   {
-    id: 'convenient-location',
-    title: 'Choolaimedu Center Access',
-    description: 'Centrally located with dedicated two-wheeler and four-wheeler parking, making it convenient to schedule daily or weekly recovery runs.',
-    iconName: 'MapPin'
+    id: 'enhances-immunity',
+    title: 'Enhances Immunity',
+    description: 'Stimulates spleen and thymus gland reflex points to boost white blood cell production and natural body defenses.',
+    iconName: 'Shield'
+  },
+  {
+    id: 'promotes-flexibility',
+    title: 'Promotes Flexibility',
+    description: 'Softens ankle joints and stretches foot tendons, enhancing physical mobility and reducing injury risks.',
+    iconName: 'Accessibility'
+  },
+  {
+    id: 'better-mental-focus',
+    title: 'Better Mental Focus',
+    description: 'Improves neural conductivity and head reflexes to clear brain fog, boost focus, and enhance mental clarity.',
+    iconName: 'Sparkles'
   }
 ];
 

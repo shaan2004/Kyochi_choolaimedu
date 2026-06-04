@@ -9,7 +9,6 @@ import { SectionTag } from '../ui/SectionTag';
 import { cn } from '@/lib/utils';
 
 export const HeroSection: React.FC = () => {
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -58,27 +57,15 @@ export const HeroSection: React.FC = () => {
         playsInline
         preload="auto"
         poster="/assets/hero-poster.jpg"
-        onLoadedData={() => setIsVideoLoaded(true)}
-        className={cn(
-          "absolute inset-0 w-full h-full object-cover transition-opacity duration-[1500ms] ease-out z-0 pointer-events-none",
-          isVideoLoaded ? "opacity-35" : "opacity-0"
-        )}
+        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-95"
         aria-hidden="true"
       >
-        <source src="https://www.kyochi.in/videos/spafullwidthVid.mp4" type="video/mp4" />
+        <source src="/assets/vid.mp4" type="video/mp4" />
       </video>
 
-      {/* Backup Poster Overlay if video doesn't load/play */}
-      {!isVideoLoaded && (
-        <div 
-          className="absolute inset-0 w-full h-full bg-cover bg-center opacity-30 z-0 pointer-events-none"
-          style={{ backgroundImage: "url('/assets/hero-poster.jpg')" }}
-          aria-hidden="true"
-        />
-      )}
 
-      {/* Dark vignette layers for high contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.65)] via-[rgba(10,10,10,0.75)] to-[rgba(10,10,10,0.95)] z-1 pointer-events-none" />
+      {/* Dark vignette layers for high contrast (softened to keep video bright and clear) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.3)] via-[rgba(10,10,10,0.4)] to-[rgba(10,10,10,0.7)] z-1 pointer-events-none" />
       <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0a0a0a] to-transparent z-1 pointer-events-none" />
 
       {/* Foreground Content */}
@@ -99,7 +86,7 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-[clamp(2.5rem,7.5vw,6rem)] font-bold tracking-tight text-text-primary leading-[1.05] mb-6 max-w-4xl"
+          className="font-display text-[clamp(2.5rem,7.5vw,6rem)] font-bold tracking-tight text-text-primary leading-[1.05] mb-6 max-w-4xl [text-shadow:0_4px_16px_rgba(0,0,0,0.95)]"
         >
           Heal From The <span className="gold-shimmer-text">Ground</span> Up
         </motion.h1>
@@ -109,7 +96,7 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.6 }}
-          className="text-base md:text-lg lg:text-xl text-text-primary/75 font-light leading-relaxed max-w-2xl mb-10"
+          className="text-base md:text-lg lg:text-xl text-text-primary font-normal leading-relaxed max-w-2xl mb-10 [text-shadow:0_2px_8px_rgba(0,0,0,0.98)]"
         >
           Experience India's leading foot reflexology brand. Re-energize your body, relieve stress, and target chronic pain under the expert care of our highly-skilled visually impaired therapists.
         </motion.p>

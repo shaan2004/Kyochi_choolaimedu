@@ -26,7 +26,7 @@ export const FloatButton: React.FC<FloatButtonProps> = ({
       whileHover={{ scale: 1.12, y: -4 }}
       whileTap={{ scale: 0.9 }}
       className={cn(
-        "flex items-center justify-center w-12 h-12 rounded-full",
+        "flex items-center justify-center w-12 h-12 rounded-full pointer-events-auto",
         "bg-surface-dark/90 backdrop-blur-md border border-gold-border/80 text-gold shadow-lg cursor-pointer",
         "hover:bg-gold hover:text-black hover:border-gold hover:shadow-[0_4px_15px_rgba(201,168,76,0.35)]",
         "transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-dark",

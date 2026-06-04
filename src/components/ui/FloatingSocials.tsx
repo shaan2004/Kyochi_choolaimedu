@@ -46,9 +46,9 @@ export const FloatingSocials: React.FC = () => {
   return (
     <div
       className={cn(
-        "z-40",
+        "z-40 pointer-events-none",
         // Desktop: Left center alignment, vertical layout
-        "lg:fixed lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:flex lg:flex-col lg:space-y-4 lg:space-x-0",
+        "lg:fixed lg:left-6 lg:top-1/2 lg:-translate-y-1/2 lg:flex lg:flex-col lg:space-y-4 lg:space-x-0 lg:right-auto lg:bottom-auto",
         // Mobile/Tablet: Bottom right corner, horizontal layout
         "fixed bottom-6 right-6 flex flex-row space-x-3 space-y-0 lg:space-x-0"
       )}
@@ -61,7 +61,7 @@ export const FloatingSocials: React.FC = () => {
       />
       <FloatButton
         icon={<InstagramIcon size={20} />}
-        href="https://www.instagram.com"
+        href="https://www.instagram.com/kyochi_choolaimedu/"
         ariaLabel="Follow Kyochi on Instagram"
       />
       <FloatButton
