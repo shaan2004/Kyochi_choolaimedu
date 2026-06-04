@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #C9A84C;
+  --color-gold-light: #e2c97e;
+  --color-bg-dark: #0a0a0a;
+  --color-surface-dark: #111111;
+  --color-card-dark: #1a1a1a;
+  --color-text-primary: #FAF7F0;
+  --color-gold-border: rgba(201, 168, 76, 0.15);
+  --color-gold-border-muted: rgba(201, 168, 76, 0.09);
+  
+  --font-display: var(--font-display), Georgia, serif;
+  --font-body: var(--font-body), sans-serif;
+  
+  --animate-pulse-gold: pulseGold 2s ease-in-out infinite;
+  --animate-shimmer: shimmer 3s linear infinite;
+  --animate-grain: noise 1s steps(4) infinite;
+  --animate-float: float 4s ease-in-out infinite;
+
+  @keyframes pulseGold {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(201, 168, 76, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(201, 168, 76, 0);
+    }
+  }
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  @keyframes noise {
+    0%, 100% { transform:translate(0, 0) }
+    10% { transform:translate(-1%, -1%) }
+    20% { transform:translate(-2%, 1%) }
+    30% { transform:translate(1%, -2%) }
+    40% { transform:translate(-1%, 3%) }
+    50% { transform:translate(-2%, 1%) }
+    60% { transform:translate(1%, 2%) }
+    70% { transform:translate(3%, -2%) }
+    80% { transform:translate(-2%, 1%) }
+    90% { transform:translate(1%, -3%) }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0) }
+    50% { transform: translateY(-10px) }
+  }
+}
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #FAF7F0;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FAF7F0 0%, #C9A84C 50%, #e2c97e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+}
+
+.gold-shimmer-text {
+  background: linear-gradient(90deg, #C9A84C 0%, #FAF7F0 25%, #e2c97e 50%, #C9A84C 75%, #FAF7F0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: shimmer 6s linear infinite;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #C9A84C 0%, #a88734 50%, #e2c97e 100%);
+}
+
+.gold-gradient-hover {
+  background: linear-gradient(135deg, #e2c97e 0%, #C9A84C 50%, #a88734 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 168, 76, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 168, 76, 0.6);
+}
+
+/* Glassmorphism Classes */
+.glass-panel {
+  background: rgba(17, 17, 17, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+}
+
