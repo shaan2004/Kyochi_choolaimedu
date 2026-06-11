@@ -55,7 +55,7 @@ export const FloatingSocials: React.FC = () => {
     >
       <FloatButton
         icon={<MessageCircle size={20} className="fill-current" />}
-        href="https://wa.me/919080389223?text=Hello%20Kyochi!%20%F0%9F%8C%BF%20I'd%20like%20to%20know%20more%20about%20your%20reflexology%20services."
+        href="https://wa.me/919566001066?text=Hello%20Kyochi!%20%F0%9F%8C%BF%20I'd%20like%20to%20know%20more%20about%20your%20reflexology%20services."
         ariaLabel="Book reflexology session on WhatsApp"
         className="bg-emerald-600/90 text-white border-emerald-500/30 hover:bg-emerald-500 hover:text-white hover:border-emerald-400 hover:shadow-[0_4px_15px_rgba(16,185,129,0.4)]"
       />
@@ -66,12 +66,12 @@ export const FloatingSocials: React.FC = () => {
       />
       <FloatButton
         icon={<FacebookIcon size={20} />}
-        href="https://www.facebook.com"
+        href="https://www.facebook.com/profile.php?id=61589085099683"
         ariaLabel="Follow Kyochi on Facebook"
       />
       <FloatButton
         icon={<Phone size={20} />}
-        href="tel:+919080389223"
+        href="tel:+919566001066"
         ariaLabel="Call Kyochi Choolaimedu"
       />
     </div>

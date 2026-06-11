@@ -24,7 +24,7 @@ export function useWhatsApp() {
     const encodedText = encodeURIComponent(fullText);
     
     // WhatsApp direct deep link to Kyochi Front Desk
-    const whatsappUrl = `https://wa.me/919080389223?text=${encodedText}`;
+    const whatsappUrl = `https://wa.me/919566001066?text=${encodedText}`;
     
     if (typeof window !== 'undefined') {
       window.open(whatsappUrl, '_blank', 'noopener,noreferrer');

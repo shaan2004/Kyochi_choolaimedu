@@ -78,8 +78,8 @@ export const Navbar: React.FC = () => {
               </span>
             </div>
             <div>
-              <a href="tel:+919080389223" className="flex items-center gap-1.5 hover:text-gold transition-colors">
-                <Phone size={11} className="text-gold animate-[pulse_2s_infinite]" /> +91 90803 89223
+              <a href="tel:+919566001066" className="flex items-center gap-1.5 hover:text-gold transition-colors">
+                <Phone size={11} className="text-gold animate-[pulse_2s_infinite]" /> +91 95660 01066
               </a>
             </div>
           </div>
@@ -129,17 +129,17 @@ export const Navbar: React.FC = () => {
             {/* Contact Info & CTA */}
             <div className="hidden lg:flex items-center gap-4">
               <a
-                href="tel:+919080389223"
+                href="tel:+919566001066"
                 className="flex items-center gap-1.5 text-sm text-text-primary/80 hover:text-gold transition-colors duration-300"
               >
-                +91 90803 89223
+                +91 95660 01066
                 <Phone size={14} className="text-gold" />
               </a>
               <a
-                href="mailto:hello@kyochi.in"
+                href="mailto:kyochichoolaimedu@gmail.com"
                 className="flex items-center gap-1.5 text-sm text-text-primary/80 hover:text-gold transition-colors duration-300"
               >
-                hello@kyochi.in
+                kyochichoolaimedu@gmail.com
                 <Mail size={14} className="text-gold" />
               </a>
               <OutlineButton
@@ -189,20 +189,20 @@ export const Navbar: React.FC = () => {
               ))}
               <div className="pt-6 flex flex-col gap-3">
                 <a
-                  href="tel:+919080389223"
+                  href="tel:+919566001066"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full py-3.5 rounded-xl border border-gold-border/30 text-gold hover:bg-gold/10 transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-sm cursor-pointer"
                 >
                   <Phone size={18} />
-                  +91 90803 89223
+                  +91 95660 01066
                 </a>
                 <a
-                  href="mailto:hello@kyochi.in"
+                  href="mailto:kyochichoolaimedu@gmail.com"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="w-full py-3.5 rounded-xl border border-gold-border/30 text-gold hover:bg-gold/10 transition-all duration-300 flex items-center justify-center gap-2 font-semibold text-sm cursor-pointer"
                 >
                   <Mail size={18} />
-                  hello@kyochi.in
+                  kyochichoolaimedu@gmail.com
                 </a>
                 <OutlineButton
                   href="#booking"
@@ -216,8 +216,8 @@ export const Navbar: React.FC = () => {
               <div className="pt-8 flex flex-col items-center gap-3 text-sm text-text-primary/60">
                 <span className="flex items-center gap-1.5"><MapPin size={14} className="text-gold" /> Choolaimedu, Chennai</span>
                 <span className="flex items-center gap-1.5"><Clock size={14} className="text-gold" /> Mon - Sat: 9 AM - 8 PM</span>
-                <a href="tel:+919080389223" className="flex items-center gap-1.5 text-gold font-medium mt-1">
-                  <Phone size={14} className="animate-pulse" /> +91 90803 89223
+                <a href="tel:+919566001066" className="flex items-center gap-1.5 text-gold font-medium mt-1">
+                  <Phone size={14} className="animate-pulse" /> +91 95660 01066
                 </a>
               </div>
             </div>

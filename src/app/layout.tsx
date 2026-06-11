@@ -71,8 +71,8 @@ const jsonLd = {
   "name": "Kyochi — Art of Healing",
   "description": "Foot reflexology center in Choolaimedu, Chennai",
   "url": "https://www.kyochi.in",
-  "telephone": "+919080389223",
-  "email": "hello@kyochi.in",
+  "telephone": "+919566001066",
+  "email": "kyochichoolaimedu@gmail.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Choolaimedu",

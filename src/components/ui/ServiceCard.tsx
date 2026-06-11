@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import * as Icons from 'lucide-react';
 import { Service } from '@/types';
 import { OutlineButton } from './OutlineButton';
@@ -67,10 +68,16 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => 
       )}
     >
       {/* Full Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-out group-hover:scale-110"
-        style={{ backgroundImage: `url('${bgImage}')` }}
-      />
+      <div className="absolute inset-0 overflow-hidden">
+        <Image
+          src={bgImage}
+          alt={title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          priority={false}
+        />
+      </div>
       {/* Dark gradient overlay for text readability */}
       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/20 z-[1]" />
 

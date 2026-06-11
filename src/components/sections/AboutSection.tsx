@@ -35,7 +35,7 @@ export const AboutSection: React.FC = () => {
                 alt="Tactile reflexology session highlighting the precision of visually impaired therapists at Kyochi"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-103"
-                sizes="(max-w-768px) 100vw, 450px"
+                sizes="(max-width: 768px) 100vw, 450px"
               />
             </div>
             
