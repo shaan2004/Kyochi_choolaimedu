@@ -15,11 +15,11 @@ export const AboutSection: React.FC = () => {
     <section
       id="about"
       ref={ref as any}
-      className="py-20 md:py-28 bg-[#0d0d0d] border-b border-gold-border/20 relative overflow-hidden"
+      className="py-20 md:py-28 bg-bg-dark border-b border-gold-border/20 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
+
           {/* Left Column: Image with Luxury Border Frame */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -29,16 +29,16 @@ export const AboutSection: React.FC = () => {
           >
             {/* Double Border Frame effect */}
             <div className="absolute -inset-4 border border-gold/15 rounded-2xl pointer-events-none group-hover:border-gold/35 transition-all duration-500" />
-            <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-gold-border/80 bg-black shadow-2xl">
+            <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-gold-border/80 bg-surface-dark shadow-2xl">
               <Image
-                src="/assets/about-therapist.jpg"
+                src="/assets/about-therapist.png"
                 alt="Tactile reflexology session highlighting the precision of visually impaired therapists at Kyochi"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-103"
                 sizes="(max-width: 768px) 100vw, 450px"
               />
             </div>
-            
+
             {/* Corner styling accents */}
             <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold/50 rounded-tl pointer-events-none" />
             <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-gold/50 rounded-br pointer-events-none" />
@@ -52,7 +52,7 @@ export const AboutSection: React.FC = () => {
             className="lg:col-span-7 flex flex-col items-start"
           >
             <SectionTag text="Art of Healing" className="mb-5" />
-            
+
             <h2 className="font-display text-3xl md:text-4.5xl lg:text-5xl font-bold tracking-tight text-text-primary mb-6 leading-[1.15]">
               Healing From Within Through <span className="gold-shimmer-text">Tactile Precision</span>
             </h2>

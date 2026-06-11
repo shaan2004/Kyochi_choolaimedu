@@ -75,7 +75,7 @@ const jsonLd = {
   "email": "kyochichoolaimedu@gmail.com",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Choolaimedu",
+    "streetAddress": "No 14/5 Indira Gandhi 3rd Street, Near MMDA Bus Depot, Choolaimedu",
     "addressLocality": "Chennai",
     "addressRegion": "Tamil Nadu",
     "postalCode": "600094",
@@ -86,7 +86,7 @@ const jsonLd = {
     "latitude": 13.0782, 
     "longitude": 80.2217 
   },
-  "openingHours": ["Mo-Sa 09:00-20:00"],
+  "openingHours": ["Mo-Su 10:00-20:00"],
   "priceRange": "₹₹",
   "aggregateRating": {
     "@type": "AggregateRating",

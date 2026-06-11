@@ -48,6 +48,7 @@ export const ServicesSection: React.FC = () => {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id as any)}
+              suppressHydrationWarning
               className={cn(
                 "px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wider border cursor-pointer transition-all duration-300",
                 activeCategory === cat.id
@@ -66,7 +67,7 @@ export const ServicesSection: React.FC = () => {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
         >
           <AnimatePresence mode="popLayout">
-            {filteredServices.map((service) => (
+            {filteredServices.map((service, idx) => (
               <motion.div
                 layout
                 key={service.id}
@@ -75,7 +76,7 @@ export const ServicesSection: React.FC = () => {
                 exit={{ opacity: 0, scale: 0.94 }}
                 transition={{ duration: 0.35 }}
               >
-                <ServiceCard service={service} />
+                <ServiceCard service={service} priority={idx < 3} />
               </motion.div>
             ))}
           </AnimatePresence>

@@ -38,7 +38,7 @@ export const ReviewsSection: React.FC = () => {
             initial={{ opacity: 0, x: -25 }}
             animate={hasRevealed ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="lg:col-span-7 w-full max-w-xl mx-auto lg:mx-0 rounded-3xl overflow-hidden border border-gold-border/40 shadow-[0_20px_50px_rgba(0,0,0,0.3)] bg-black"
+            className="lg:col-span-7 w-full max-w-xl mx-auto lg:mx-0 rounded-3xl overflow-hidden border border-gold-border/40 shadow-[0_20px_50px_rgba(0,0,0,0.3)] bg-surface-dark"
           >
             <video
               src="/assets/client-review.mp4"

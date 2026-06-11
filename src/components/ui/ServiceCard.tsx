@@ -11,24 +11,25 @@ import { cn } from '@/lib/utils';
 interface ServiceCardProps {
   service: Service;
   onBook?: (serviceTitle: string) => void;
+  priority?: boolean;
 }
 
 const serviceBgImages: Record<string, string> = {
-  'royal-reflexology': '/assets/royal-foot.png',
-  'de-stress': '/assets/de-stress.png',
+  'relaxation': '/assets/royal-foot.png',
+  'destress': '/assets/de-stress.png',
   'chronic-pain': '/assets/chronic-pain.png',
-  'detox-reflexology': '/assets/detox.png',
-  'sleep-inducing': '/assets/sleep-inducing.png',
-  'neuropathy-care': '/assets/neuropathy.png',
-  'senior-mobility': '/assets/senior-mobility.png',
-  'lymphatic-drainage': '/assets/lympatic-drainage.png',
-  'sports-recovery': '/assets/sports-recovery.png',
-  'head-shoulder-foot-combo': '/assets/head,shoulder-and-foot.png',
+  'soul-serenity': '/assets/service4.png',
+  'detox': '/assets/detox.png',
+  'femme-cycle': '/assets/service3.png',
+  'face-detox': '/assets/service.png',
+  'little-feet': '/assets/service1.png',
+  'nasal': '/assets/service2.png',
+  'vita-flex': '/assets/neuropathy.png',
 };
 
-export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => {
+export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook, priority = false }) => {
   const { id, title, excerpt, tags, iconName } = service;
-  
+
   // Resolve Lucide icon component dynamically
   const IconComponent = (Icons as any)[iconName] || Icons.HelpCircle;
 
@@ -42,9 +43,9 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => 
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
         // Attempt to auto-select the service in any rendered booking form
-        const select = (document.getElementById('section-service-select') || 
-                        document.getElementById('popup-service-select') || 
-                        document.getElementById('booking-service-select')) as HTMLSelectElement;
+        const select = (document.getElementById('section-service-select') ||
+          document.getElementById('popup-service-select') ||
+          document.getElementById('booking-service-select')) as HTMLSelectElement;
         if (select) {
           select.value = title;
           select.dispatchEvent(new Event('change', { bubbles: true }));
@@ -56,7 +57,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => 
   return (
     <motion.div
       initial={{ borderColor: "rgba(201, 168, 76, 0.09)" }}
-      whileHover={{ 
+      whileHover={{
         y: -4,
         scale: 1.01,
         borderColor: "rgba(201, 168, 76, 0.45)",
@@ -75,23 +76,23 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => 
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-          priority={false}
+          priority={priority}
         />
       </div>
-      {/* Dark gradient overlay for text readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/75 to-black/20 z-[1]" />
+      {/* Dark gradient overlay for text readability on bottom, transparent on top to show real image */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent z-[1]" />
 
       {/* Content overlaid on top of background */}
       <div className="relative z-10 p-6 md:p-8 flex flex-col justify-end flex-grow">
         <div className="flex justify-between items-start mb-4">
-          <div className="p-2.5 rounded-xl bg-gold/10 border border-gold/20 text-gold backdrop-blur-sm">
+          <div className="p-2.5 rounded-xl bg-gold/15 border border-gold/30 text-gold backdrop-blur-sm">
             <IconComponent size={20} className="stroke-[1.5]" aria-hidden="true" />
           </div>
           <div className="flex flex-wrap gap-1 justify-end">
             {tags.map((tag, idx) => (
               <span
                 key={idx}
-                className="text-[9px] font-bold tracking-wider uppercase bg-gold/10 text-gold-light border border-gold/25 px-2.5 py-0.5 rounded-full backdrop-blur-sm"
+                className="text-[9px] font-bold tracking-wider uppercase bg-gold/15 text-gold border border-gold/30 px-2.5 py-0.5 rounded-full backdrop-blur-sm"
               >
                 {tag}
               </span>
@@ -99,11 +100,22 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => 
           </div>
         </div>
 
-        <h3 className="font-display text-xl md:text-2xl font-medium text-text-primary mb-2.5 group-hover:text-gold-light transition-colors duration-300">
+        <h3 className="font-display text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-gold transition-colors duration-300">
           {title}
         </h3>
-        
-        <p className="text-sm text-text-primary/80 mb-6 leading-relaxed font-light line-clamp-3">
+
+        {/* Duration & Price Display */}
+        <div className="flex items-center gap-2 mb-3 text-sm">
+          <span className="font-bold text-gold">
+            {id === 'relaxation' ? '₹500 - ₹700' : id === 'destress' ? '₹600 - ₹800' : id === 'chronic-pain' ? '₹650 - ₹850' : `₹${service.priceInr}`}
+          </span>
+          <span className="text-xs text-white/30">•</span>
+          <span className="text-xs font-medium text-white/80">
+            {id === 'relaxation' || id === 'destress' || id === 'chronic-pain' ? '30/40/60 Mins' : `${service.durationMin} Mins`}
+          </span>
+        </div>
+
+        <p className="text-sm text-white/80 mb-6 leading-relaxed font-normal line-clamp-3">
           {excerpt}
         </p>
 
@@ -111,7 +123,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook }) => 
           <OutlineButton
             onClick={handleBookClick}
             ariaLabel={`Book ${title}`}
-            className="w-full md:w-[150px] py-2.5 text-xs md:text-sm font-semibold rounded-xl bg-black/40 backdrop-blur-sm border-gold-border/40 hover:bg-gold hover:text-black transition-all duration-300"
+            className="w-full md:w-[150px] py-2.5 text-xs md:text-sm font-semibold rounded-xl bg-white/10 backdrop-blur-sm border-gold-border/40 text-white hover:bg-gold hover:text-black transition-all duration-300"
           >
             Book Now
           </OutlineButton>

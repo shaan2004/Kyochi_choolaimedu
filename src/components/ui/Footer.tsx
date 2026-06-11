@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-[#070707] border-t border-gold-border/20 pt-16 pb-8 text-text-primary/75">
+    <footer className="relative bg-surface-dark/95 border-t border-gold-border/20 pt-16 pb-8 text-text-primary/75">
       {/* Glow highlight */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent pointer-events-none" />
 
@@ -108,7 +108,8 @@ export const Footer: React.FC = () => {
               <div>
                 <p className="font-medium text-text-primary">Kyochi Choolaimedu</p>
                 <p className="text-xs text-text-primary/60 mt-0.5 leading-relaxed">
-                  Choolaimedu High Road, Choolaimedu,<br />
+                  No 14/5 Indira Gandhi 3rd Street,<br />
+                  Near MMDA Bus Depot, Choolaimedu,<br />
                   Chennai, Tamil Nadu 600094
                 </p>
                 <a 
@@ -136,7 +137,7 @@ export const Footer: React.FC = () => {
             <li className="flex items-center gap-2.5">
               <Clock size={16} className="text-gold shrink-0" />
               <span className="text-xs">
-                Mon - Sat: 09:00 AM - 08:00 PM
+                Mon - Sun: 10:00 AM - 08:00 PM
               </span>
             </li>
           </ul>

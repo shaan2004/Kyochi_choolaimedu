@@ -14,7 +14,7 @@ export const BookingSection: React.FC = () => {
     <section
       id="booking"
       ref={ref as any}
-      className="py-20 md:py-28 bg-[#0a0a0a] relative overflow-hidden"
+      className="py-20 md:py-28 bg-bg-dark relative overflow-hidden"
     >
       {/* Subtle background glow */}
       <div className="absolute top-1/4 right-0 w-[260px] h-[260px] bg-gold/5 rounded-full filter blur-[110px] pointer-events-none" />
@@ -45,7 +45,7 @@ export const BookingSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-text-primary">Our Center</h4>
-                  <p className="text-xs text-text-primary/60">Choolaimedu, Chennai, TN 600094</p>
+                  <p className="text-xs text-text-primary/60">No 14/5 Indira Gandhi 3rd St, Choolaimedu, Chennai 600094</p>
                 </div>
               </div>
               
@@ -55,7 +55,7 @@ export const BookingSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-text-primary">Opening Hours</h4>
-                  <p className="text-xs text-text-primary/60">Mon - Sat: 9:00 AM - 8:00 PM</p>
+                  <p className="text-xs text-text-primary/60">Mon - Sun: 10:00 AM - 8:00 PM</p>
                 </div>
               </div>
 
@@ -65,7 +65,7 @@ export const BookingSection: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-sm font-semibold text-text-primary">Call Desk</h4>
-                  <p className="text-xs text-text-primary/60">+91 90803 89223</p>
+                  <p className="text-xs text-text-primary/60">+91 95660 01066</p>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ export const BookingSection: React.FC = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={hasRevealed ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.15 }}
-            className="lg:col-span-7 w-full bg-[#111111] border border-gold-border p-6.5 sm:p-9 rounded-3xl shadow-2xl relative"
+            className="lg:col-span-7 w-full bg-surface-dark border border-gold-border p-6.5 sm:p-9 rounded-3xl shadow-2xl relative"
           >
             {/* L-brackets inside form card */}
             <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-gold/30 rounded-tr pointer-events-none" />

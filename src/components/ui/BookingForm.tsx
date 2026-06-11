@@ -56,7 +56,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             })}
             suppressHydrationWarning
             className={cn(
-              "w-full px-4.5 py-3.5 bg-[#1a1a1a] border border-gold-border/60 text-text-primary rounded-xl",
+              "w-full px-4.5 py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl",
               "placeholder-text-primary/25 transition-all duration-300 text-sm md:text-base",
               "focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15"
             )}
@@ -83,7 +83,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             })}
             suppressHydrationWarning
             className={cn(
-              "w-full px-4.5 py-3.5 bg-[#1a1a1a] border border-gold-border/60 text-text-primary rounded-xl",
+              "w-full px-4.5 py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl",
               "placeholder-text-primary/25 transition-all duration-300 text-sm md:text-base",
               "focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15"
             )}
@@ -103,14 +103,14 @@ export const BookingForm: React.FC<BookingFormProps> = ({
           {...register('service', { required: 'Please select a service' })}
           suppressHydrationWarning
           className={cn(
-            "w-full px-4.5 py-3.5 bg-[#1a1a1a] border border-gold-border/60 text-text-primary rounded-xl cursor-pointer",
+            "w-full px-4.5 py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl cursor-pointer",
             "transition-all duration-300 text-sm md:text-base appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23C9A84C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:18px] bg-[right_1rem_center] bg-no-repeat",
             "focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15"
           )}
         >
           <option value="" disabled className="text-text-primary/20">Choose a therapy...</option>
           {SERVICES.map((service) => (
-            <option key={service.id} value={service.title} className="bg-[#111] text-text-primary">
+            <option key={service.id} value={service.title} className="bg-surface-dark text-text-primary">
               {service.title} (₹{service.priceInr})
             </option>
           ))}
@@ -131,7 +131,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
           {...register('message')}
           suppressHydrationWarning
           className={cn(
-            "w-full px-4.5 py-3.5 bg-[#1a1a1a] border border-gold-border/60 text-text-primary rounded-xl resize-none",
+            "w-full px-4.5 py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl resize-none",
             "placeholder-text-primary/25 transition-all duration-300 text-sm md:text-base",
             "focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15"
           )}

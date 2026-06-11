@@ -33,7 +33,7 @@ export const BenefitsSection: React.FC = () => {
     <section
       id="benefits"
       ref={ref as any}
-      className="py-20 md:py-28 bg-[#0d0d0d] border-b border-gold-border/20 relative overflow-hidden"
+      className="py-20 md:py-28 bg-bg-dark border-b border-gold-border/20 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         

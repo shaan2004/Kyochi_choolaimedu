@@ -61,7 +61,7 @@ export const PopupBooking: React.FC = () => {
             aria-modal="true"
             aria-labelledby="modal-title"
             className={cn(
-              "relative z-10 w-full h-full sm:h-auto max-w-none sm:max-w-lg bg-[#111111] border border-gold-border/80 shadow-[0_40px_80px_rgba(0,0,0,0.75)] overflow-y-auto max-h-screen sm:max-h-none sm:rounded-3xl flex flex-col"
+              "relative z-10 w-full h-full sm:h-auto max-w-none sm:max-w-lg bg-surface-dark border border-gold-border/80 shadow-[0_40px_80px_rgba(0,0,0,0.75)] overflow-y-auto max-h-screen sm:max-h-none sm:rounded-3xl flex flex-col"
             )}
           >
             {/* Banner Image */}
@@ -70,17 +70,19 @@ export const PopupBooking: React.FC = () => {
                 src="/assets/og-image.jpg"
                 alt="Kyochi Healing Center"
                 fill
+                sizes="(max-width: 640px) 100vw, 512px"
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111111] to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent" />
             </div>
 
             {/* Close Button */}
             <button
               onClick={handleClose}
               aria-label="Close booking form"
-              className="absolute top-4 right-4 p-2.5 rounded-full border border-gold-border/20 text-gold hover:bg-gold/10 hover:border-gold/60 bg-black/40 backdrop-blur-sm transition-all duration-300 cursor-pointer z-20"
+              suppressHydrationWarning
+              className="absolute top-4 right-4 p-2.5 rounded-full border border-gold-border/20 text-gold hover:bg-gold/10 hover:border-gold/60 bg-surface-dark/40 backdrop-blur-sm transition-all duration-300 cursor-pointer z-20"
             >
               <X size={18} aria-hidden="true" />
             </button>

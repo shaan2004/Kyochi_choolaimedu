@@ -41,7 +41,7 @@ export const HeroSection: React.FC = () => {
     <section
       ref={containerRef}
       aria-label="Hero — Welcome to Kyochi"
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#050505]"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-bg-dark"
     >
       
       {/* Decorative Gold Corner L-Brackets */}
@@ -64,9 +64,8 @@ export const HeroSection: React.FC = () => {
       </video>
 
 
-      {/* Dark vignette layers for high contrast (softened to keep video bright and clear) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[rgba(10,10,10,0.3)] via-[rgba(10,10,10,0.4)] to-[rgba(10,10,10,0.7)] z-1 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-[#0a0a0a] to-transparent z-1 pointer-events-none" />
+
+      <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-bg-dark to-transparent z-1 pointer-events-none" />
 
       {/* Foreground Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24 pb-16 flex flex-col items-center">
@@ -86,7 +85,7 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-[clamp(2.5rem,7.5vw,6rem)] font-bold tracking-tight text-text-primary leading-[1.05] mb-6 max-w-4xl [text-shadow:0_4px_16px_rgba(0,0,0,0.95)]"
+          className="font-display text-[clamp(2.5rem,7.5vw,6rem)] font-bold tracking-tight text-text-primary leading-[1.05] mb-6 max-w-4xl"
         >
           Heal From The <span className="gold-shimmer-text">Ground</span> Up
         </motion.h1>
@@ -96,10 +95,11 @@ export const HeroSection: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.6 }}
-          className="text-base md:text-lg lg:text-xl text-text-primary font-normal leading-relaxed max-w-2xl mb-10 [text-shadow:0_2px_8px_rgba(0,0,0,0.98)]"
+          className="text-base md:text-lg lg:text-xl text-text-primary font-normal leading-relaxed max-w-2xl mb-8"
         >
           Experience India's leading foot reflexology brand. Re-energize your body, relieve stress, and target chronic pain under the expert care of our highly-skilled visually impaired therapists.
         </motion.p>
+
 
         {/* CTA Buttons Row */}
         <motion.div

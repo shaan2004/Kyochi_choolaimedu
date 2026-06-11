@@ -2,189 +2,153 @@ import { Service, Review, Benefit, Stat, FAQ } from '../types';
 
 export const SERVICES: Service[] = [
   {
-    id: 'royal-reflexology',
-    title: 'Royal Foot Reflexology',
+    id: 'relaxation',
+    title: 'Relaxation Reflexology',
     category: 'relaxation',
-    excerpt: 'The ultimate royal indulgence mapping key zones for deep systemic relaxation.',
-    description: 'Experience our signature royal treatment. Combines traditional warm herbal foot soak, intensive reflex zone stimulation, and soothing hot towels to release built-up tension and restore natural balance.',
+    excerpt: 'Soothing foot reflexology to ease tension, promote deep relaxation and quiet the mind.',
+    description: 'A classic relaxation therapy that focuses on calming the nervous system, releasing muscular tension, and restoring calm. Rates: 30 Mins (₹500) | 40 Mins (₹600) | 60 Mins (₹700)',
     durationMin: 60,
-    priceInr: 1499,
-    tags: ['Best Seller', 'Relaxation', 'Signature'],
-    iconName: 'Sparkles'
+    priceInr: 700,
+    tags: ['Relaxation', '30/40/60 Mins'],
+    iconName: 'Flower2'
   },
   {
-    id: 'de-stress',
+    id: 'destress',
     title: 'De-Stress Reflexology',
     category: 'relaxation',
-    excerpt: 'Calm your overactive nervous system and relieve mental exhaustion.',
-    description: 'Specially designed for busy professionals. Focuses on solar plexus and head reflexes to reduce cortisol levels, ease mental stress, and induce deep meditative relaxation.',
-    durationMin: 45,
-    priceInr: 1199,
-    tags: ['Mind Calm', 'Popular'],
+    excerpt: 'Relieve mental fatigue and reduce cortisol levels through targeted solar plexus reflexes.',
+    description: 'Specially designed to combat stress. Targets head, neck, and solar plexus reflex zones to reduce stress and anxiety. Rates: 30 Mins (₹600) | 40 Mins (₹700) | 60 Mins (₹800)',
+    durationMin: 60,
+    priceInr: 800,
+    tags: ['Mind Calm', '30/40/60 Mins'],
     iconName: 'Brain'
   },
   {
     id: 'chronic-pain',
     title: 'Chronic Pain Reflexology',
     category: 'therapy',
-    excerpt: 'Targeted therapy for plantar fasciitis, heel pain, and arch stiffness.',
-    description: 'Deep tissue reflexology targeting local inflammation, heel spurs, and fascia tightness. Highly recommended for runners, teachers, and anyone standing for prolonged hours.',
+    excerpt: 'Targeted pressure for heel pain, plantar fasciitis, and local foot inflammation.',
+    description: 'Deep therapeutic reflexology targeting local inflammation, heel spurs, and plantar fasciitis. Rates: 30 Mins (₹650) | 40 Mins (₹750) | 60 Mins (₹850)',
     durationMin: 60,
-    priceInr: 1699,
-    tags: ['Therapeutic', 'Relief'],
+    priceInr: 850,
+    tags: ['Therapeutic', 'Relief', '30/40/60 Mins'],
     iconName: 'Activity'
   },
   {
-    id: 'detox-reflexology',
-    title: 'Detox Reflexology',
-    category: 'healing',
-    excerpt: 'Stimulate kidney, liver, and digestive reflex points to promote waste elimination.',
-    description: 'Promotes systemic detoxification by stimulating lymphatic, urinary, and digestive reflex areas. Increases cellular oxygenation and leaves you feeling lightweight.',
+    id: 'soul-serenity',
+    title: 'Soul Serenity',
+    category: 'relaxation',
+    excerpt: 'Relieves stress, soothes tired muscles and brings peace & balance to your body, mind and spirit.',
+    description: 'A premium therapeutic session that targets full foot zones to relieve deep-seated stress and soothe tired muscles, bringing ultimate peace and balance.',
     durationMin: 60,
-    priceInr: 1599,
-    tags: ['Detox', 'Wellness'],
+    priceInr: 950,
+    tags: ['Specialty', '60 Mins'],
+    iconName: 'Sparkles'
+  },
+  {
+    id: 'detox',
+    title: 'Detox',
+    category: 'healing',
+    excerpt: 'Detox clears toxins by stimulating specific reflex areas on the feet, enhancing energy flow & helps in weight control.',
+    description: 'Designed to flush out waste and metabolic toxins. Stimulates primary cleansing organs like liver and kidney points on the feet, enhancing natural detoxification.',
+    durationMin: 60,
+    priceInr: 1100,
+    tags: ['Detox', '60 Mins'],
     iconName: 'Droplets'
   },
   {
-    id: 'sleep-inducing',
-    title: 'Sleep Inducing Therapy',
-    category: 'relaxation',
-    excerpt: 'Prepare your mind and body for deep, restorative sleep.',
-    description: 'Slow, rhythmic pressure on pineal, pituitary, and nervous system reflex zones. Excellent for insomnia sufferers and frequent travelers experiencing jetlag.',
-    durationMin: 60,
-    priceInr: 1399,
-    tags: ['Sleep Care', 'Gentle'],
-    iconName: 'Moon'
-  },
-  {
-    id: 'neuropathy-care',
-    title: 'Neuropathy Reflexology',
-    category: 'therapy',
-    excerpt: 'Improve blood flow, alleviate numbness, and re-energize nerve endings.',
-    description: 'Gentle, specific stimulation techniques that enhance peripheral blood circulation and neural conductivity. Ideal for managing diabetic neuropathy symptoms.',
-    durationMin: 45,
-    priceInr: 1499,
-    tags: ['Medical Aid', 'Circulation'],
-    iconName: 'Zap'
-  },
-  {
-    id: 'senior-mobility',
-    title: 'Senior Mobility Reflexology',
+    id: 'femme-cycle',
+    title: 'Femme Cycle',
     category: 'healing',
-    excerpt: 'Soften stiff ankle joints, boost circulation, and restore vital energy.',
-    description: 'A gentle, slow-paced reflexology session modified specifically for seniors. Enhances joint lubrication, reduces swelling, and safely boosts overall energy levels.',
-    durationMin: 45,
-    priceInr: 1099,
-    tags: ['Senior Care', 'Soft Touch'],
+    excerpt: 'Non-invasive way to balance hormones and promote menstrual health.',
+    description: 'A specialized treatment mapping uterine, ovarian, and endocrine reflexes to help balance female hormones, ease cramping, and promote cycle health.',
+    durationMin: 60,
+    priceInr: 1100,
+    tags: ['Endocrine Care', '60 Mins'],
     iconName: 'Heart'
   },
   {
-    id: 'lymphatic-drainage',
-    title: 'Lymphatic Drainage Reflexology',
+    id: 'face-detox',
+    title: 'Face Detox',
     category: 'healing',
-    excerpt: 'Reduce leg swelling, edema, and fluid retention with soft pumping strokes.',
-    description: 'Uses rhythmic, circular pressure along lymphatic pathways in the feet and lower legs to clear toxins, stimulate fluid flow, and reduce swelling.',
+    excerpt: 'Helps improve skin health, reduce stress, and promote overall well-being through facial reflex points.',
+    description: 'Works on the delicate facial reflex zones to stimulate lymphatic drainage, reduce sinus tension, and improve microcirculation for a healthy glow.',
+    durationMin: 30,
+    priceInr: 850,
+    tags: ['Skin Health', '30 Mins'],
+    iconName: 'Smile'
+  },
+  {
+    id: 'little-feet',
+    title: 'Little Feet',
+    category: 'therapy',
+    excerpt: 'Supports healthy growth and relaxation in children through gentle foot reflexology.',
+    description: 'A very soft, soothing reflexology session customized specifically for children to promote better sleep, support growth, and ease hyper-activeness.',
+    durationMin: 30,
+    priceInr: 450,
+    tags: ['Children', '30 Mins'],
+    iconName: 'Baby'
+  },
+  {
+    id: 'nasal',
+    title: 'Nasal',
+    category: 'therapy',
+    excerpt: 'Relieves congestion, nasal irritation, sinus and cold.',
+    description: 'Targets the sinus, bronchial, and lung reflex zones on the toes and foot pad to relieve nasal congestion, sinus pressure, and cold symptoms.',
     durationMin: 60,
-    priceInr: 1799,
-    tags: ['Therapeutic', 'Swelling Relief'],
+    priceInr: 1100,
+    tags: ['Sinus Relief', '60 Mins'],
     iconName: 'Wind'
   },
   {
-    id: 'sports-recovery',
-    title: 'Sports Recovery Reflexology',
-    category: 'therapy',
-    excerpt: 'Speed up muscle recovery, clear lactic acid, and restore flex. flexibility.',
-    description: 'A rigorous reflexology session for athletes. Speeds up waste product clearance, improves range of motion, and targets Achilles tendons and calf structures.',
+    id: 'vita-flex',
+    title: 'Vita Flex',
+    category: 'healing',
+    excerpt: 'Promotes the health and healing of every body system and energy booster for feet and body.',
+    description: 'An ancient reflexology mapping system applying roll-and-release pressure. Boosts overall vitality, enhances spinal pathways, and energizes the entire body.',
     durationMin: 60,
-    priceInr: 1699,
-    tags: ['Athletes', 'Deep Pressure'],
-    iconName: 'Flame'
-  },
-  {
-    id: 'head-shoulder-foot-combo',
-    title: 'Head, Shoulder & Foot Combo',
-    category: 'relaxation',
-    excerpt: 'Complete stress release targeting main tension reservoirs.',
-    description: 'Combine 40 minutes of deep foot reflexology with 20 minutes of targeted upper back, neck, and shoulder acupressure to dissolve stress from top to bottom.',
-    durationMin: 90,
-    priceInr: 2299,
-    tags: ['Premium', 'All-In-One'],
-    iconName: 'User'
+    priceInr: 1100,
+    tags: ['Vitality Boost', '60 Mins'],
+    iconName: 'Zap'
   }
 ];
 
 export const BENEFITS: Benefit[] = [
   {
-    id: 'improve-sleep',
-    title: 'Improve Sleep',
-    description: 'Combats insomnia and regulates your natural circadian sleep cycle by stimulating nervous system and pineal gland reflexes.',
-    iconName: 'Moon'
+    id: 'deep-relaxation',
+    title: 'Deep Relaxation',
+    description: 'Promotes deep systemic relaxation, soothing tired muscles and calming the nervous system.',
+    iconName: 'Leaf'
   },
   {
-    id: 'reduce-stress',
-    title: 'Reduce Stress',
-    description: 'Lowers cortisol levels and calms an overactive nervous system by target-stimulating head and solar plexus zones.',
-    iconName: 'Activity'
-  },
-  {
-    id: 'enhanced-circulation',
-    title: 'Enhanced Circulation',
-    description: 'Boosts oxygenated blood flow and lymphatic drainage throughout the body, reducing muscle fatigue and swelling.',
-    iconName: 'Heart'
-  },
-  {
-    id: 'improves-digestion',
-    title: 'Improves Digestion',
-    description: 'Stimulates kidney, liver, and digestive reflex points to ease bloating, optimize metabolism, and promote gut health.',
-    iconName: 'Apple'
-  },
-  {
-    id: 'body-mind-awareness',
-    title: 'Body-Mind Awareness',
-    description: 'Fosters a deeper connection between mental state and physical responses, increasing mindfulness and grounding.',
-    iconName: 'Brain'
-  },
-  {
-    id: 'relaxation',
-    title: 'Relaxation',
-    description: 'Induces deep systemic relaxation through soothing trigger-point work, releasing deep-seated muscular tension.',
+    id: 'stress-relief',
+    title: 'Stress Relief',
+    description: 'Lowers cortisol levels and helps quiet an overactive mind to dissolve everyday stress.',
     iconName: 'Flower2'
   },
   {
-    id: 'pain-relief',
-    title: 'Pain Relief',
-    description: 'Alleviates plantar fasciitis, heel spurs, and lower body aches by relieving tension in local foot fascia and nerves.',
-    iconName: 'BriefcaseMedical'
+    id: 'improves-immunity',
+    title: 'Improves Immunity',
+    description: 'Stimulates endocrine and organ reflex zones to bolster natural immune defenses.',
+    iconName: 'ShieldPlus'
+  },
+  {
+    id: 'better-circulation',
+    title: 'Better Circulation',
+    description: 'Boosts healthy blood flow and activates lymphatic drainage throughout the body.',
+    iconName: 'RefreshCw'
   },
   {
     id: 'boosts-energy',
     title: 'Boosts Energy',
-    description: 'Revitalizes fatigued organs and clears energetic pathways, leaving you feeling active, light, and refreshed.',
+    description: 'Clears blocked energetic pathways to revitalize organs and restore vitality.',
     iconName: 'Zap'
   },
   {
-    id: 'detoxifies',
-    title: 'Detoxifies',
-    description: 'Encourages rapid waste and toxin elimination by activating lymphatic drainage and vital cleansing organs.',
-    iconName: 'Droplets'
-  },
-  {
-    id: 'enhances-immunity',
-    title: 'Enhances Immunity',
-    description: 'Stimulates spleen and thymus gland reflex points to boost white blood cell production and natural body defenses.',
-    iconName: 'Shield'
-  },
-  {
-    id: 'promotes-flexibility',
-    title: 'Promotes Flexibility',
-    description: 'Softens ankle joints and stretches foot tendons, enhancing physical mobility and reducing injury risks.',
-    iconName: 'Accessibility'
-  },
-  {
-    id: 'better-mental-focus',
-    title: 'Better Mental Focus',
-    description: 'Improves neural conductivity and head reflexes to clear brain fog, boost focus, and enhance mental clarity.',
-    iconName: 'Sparkles'
+    id: 'restores-balance',
+    title: 'Restores Balance',
+    description: 'Brings natural harmony and equilibrium to the mind, body, and spiritual systems.',
+    iconName: 'Scale'
   }
 ];
 
@@ -202,7 +166,7 @@ export const REVIEWS: Review[] = [
     id: 'rev-2',
     name: 'Deepika Sundar',
     stars: 5,
-    serviceTag: 'Royal Foot Reflexology',
+    serviceTag: 'Relaxation Reflexology',
     testimonial: 'The absolute best foot reflexology in Chennai. The atmosphere is quiet, clean, and smells wonderful. The therapists are extremely respectful, and the herbal soak before the massage is pure heaven.',
     date: '1 Month Ago',
     location: 'Choolaimedu'
@@ -220,7 +184,7 @@ export const REVIEWS: Review[] = [
     id: 'rev-4',
     name: 'Meera Krishnan',
     stars: 5,
-    serviceTag: 'Sleep Inducing Therapy',
+    serviceTag: 'Soul Serenity',
     testimonial: 'I had severe sleep issues and anxiety. My therapist worked extensively on my toes (pineal gland points). I slept like a baby that very night. It feels magical but is pure therapeutic science.',
     date: '3 Weeks Ago',
     location: 'Kilpauk'
@@ -229,7 +193,7 @@ export const REVIEWS: Review[] = [
     id: 'rev-5',
     name: 'Dr. Rajesh Kumar',
     stars: 5,
-    serviceTag: 'Neuropathy Care',
+    serviceTag: 'Vita Flex',
     testimonial: 'I recommend Kyochi to my patients looking for complementary therapies. Their hygienic practices, respect for patients, and scientific approach to reflexology mapping are top-tier in Chennai.',
     date: '1 Month Ago',
     location: 'Chetpet'
@@ -238,7 +202,7 @@ export const REVIEWS: Review[] = [
     id: 'rev-6',
     name: 'Shalini Swaminathan',
     stars: 5,
-    serviceTag: 'Lymphatic Drainage',
+    serviceTag: 'Femme Cycle',
     testimonial: 'My feet swelling during pregnancy was a major issue. The therapist was so gentle and used light pumping movements. The swelling reduced significantly by the next morning. Lifesavers!',
     date: '2 Months Ago',
     location: 'Aminjikarai'
@@ -291,7 +255,7 @@ export const FAQS: FAQ[] = [
   {
     id: 'faq-4',
     question: 'How many sessions do I need to see results for chronic pain?',
-    answer: 'For acute stress or mild fatigue, a single session provides immediate relief. For chronic conditions such as plantar fasciitis, severe anxiety, or diabetic neuropathy, we recommend a starter course of 3 to 5 sessions spaced weekly, followed by bi-weekly maintenance visits to sustain metabolic balance.'
+    answer: 'For acute stress or mild fatigue, a single session provides immediate relief. For chronic conditions such as plantar fasciitis, severe anxiety, or hormonal imbalances, we recommend a starter course of 3 to 5 sessions spaced weekly, followed by bi-weekly maintenance visits to sustain metabolic balance.'
   },
   {
     id: 'faq-5',

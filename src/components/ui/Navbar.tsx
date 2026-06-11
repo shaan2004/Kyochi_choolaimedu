@@ -64,7 +64,7 @@ export const Navbar: React.FC = () => {
         {/* Contact Info Bar (Hidden when scrolled) */}
         <div 
           className={cn(
-            "bg-black/90 border-b border-gold-border/20 text-[10px] md:text-xs text-text-primary/70 transition-all duration-300 overflow-hidden",
+            "bg-bg-dark/95 border-b border-gold-border/20 text-[10px] md:text-xs text-text-primary/70 transition-all duration-300 overflow-hidden",
             isScrolled ? "h-0 opacity-0" : "h-9 opacity-100"
           )}
         >
@@ -74,7 +74,7 @@ export const Navbar: React.FC = () => {
                 <MapPin size={11} className="text-gold" /> Choolaimedu, Chennai
               </span>
               <span className="hidden sm:flex items-center gap-1.5">
-                <Clock size={11} className="text-gold" /> Mon - Sat: 9 AM - 8 PM
+                <Clock size={11} className="text-gold" /> Mon - Sun: 10 AM - 8 PM
               </span>
             </div>
             <div>
@@ -156,6 +156,7 @@ export const Navbar: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-expanded={isMobileMenuOpen}
               aria-label="Toggle Navigation Menu"
+              suppressHydrationWarning
               className="lg:hidden p-2 rounded-xl border border-gold-border/30 text-gold hover:bg-gold/10 transition-all duration-300 cursor-pointer"
             >
               {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -174,7 +175,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-30 pt-28 bg-[#0a0a0a]/98 backdrop-blur-lg flex flex-col p-6 border-b border-gold-border/20 lg:hidden"
+            className="fixed inset-0 z-30 pt-28 bg-bg-dark/98 backdrop-blur-lg flex flex-col p-6 border-b border-gold-border/20 lg:hidden"
           >
             <div className="flex flex-col space-y-6 text-center">
               {navLinks.map((link) => (
@@ -215,7 +216,7 @@ export const Navbar: React.FC = () => {
               </div>
               <div className="pt-8 flex flex-col items-center gap-3 text-sm text-text-primary/60">
                 <span className="flex items-center gap-1.5"><MapPin size={14} className="text-gold" /> Choolaimedu, Chennai</span>
-                <span className="flex items-center gap-1.5"><Clock size={14} className="text-gold" /> Mon - Sat: 9 AM - 8 PM</span>
+                <span className="flex items-center gap-1.5"><Clock size={14} className="text-gold" /> Mon - Sun: 10 AM - 8 PM</span>
                 <a href="tel:+919566001066" className="flex items-center gap-1.5 text-gold font-medium mt-1">
                   <Phone size={14} className="animate-pulse" /> +91 95660 01066
                 </a>
