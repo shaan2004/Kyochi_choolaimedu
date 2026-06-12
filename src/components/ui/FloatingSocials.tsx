@@ -1,9 +1,9 @@
 'use client';
 
-import React from 'react';
-import { Phone, MessageCircle } from 'lucide-react';
+import { Phone, MessageCircle, ChevronLeft } from 'lucide-react';
 import { FloatButton } from './FloatButton';
 import { cn } from '@/lib/utils';
+import { motion } from 'framer-motion';
 
 // Custom SVG components for brand icons since they were removed in Lucide v1.x
 const InstagramIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className }) => (
@@ -49,6 +49,19 @@ export const FloatingSocials: React.FC = () => {
         "z-40 pointer-events-none fixed right-4 md:right-6 top-1/2 -translate-y-1/2 flex flex-col space-y-3.5"
       )}
     >
+      <motion.button
+        onClick={() => window.dispatchEvent(new CustomEvent('open-kyochi-ghee-offer'))}
+        aria-label="View promotional offer"
+        whileHover={{ scale: 1.12, y: -4 }}
+        whileTap={{ scale: 0.9 }}
+        className={cn(
+          "flex items-center justify-center w-12 h-12 rounded-full pointer-events-auto shadow-lg cursor-pointer",
+          "bg-gold text-black border border-gold/80 hover:bg-gold-light hover:border-gold",
+          "transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-bg-dark"
+        )}
+      >
+        <ChevronLeft size={22} className="stroke-[2.5]" />
+      </motion.button>
       <FloatButton
         icon={<MessageCircle size={20} className="fill-current" />}
         href="https://wa.me/919566001066?text=Hello%20Kyochi!%20%F0%9F%8C%BF%20I'd%20like%20to%20know%20more%20about%20your%20reflexology%20services."

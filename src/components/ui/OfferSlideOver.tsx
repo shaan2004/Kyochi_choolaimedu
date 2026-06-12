@@ -30,7 +30,7 @@ export const OfferSlideOver: React.FC = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Don't trigger if the user has already submitted the offer
+    // Don't trigger scroll overlay if the user has already submitted the offer
     const isClaimed = localStorage.getItem('kyochi_ghee_offer_claimed');
     if (isClaimed) return;
 
@@ -50,6 +50,19 @@ export const OfferSlideOver: React.FC = () => {
 
     observer.observe(target);
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    const handleOpenManual = () => {
+      setIsOpen(true);
+    };
+
+    window.addEventListener('open-kyochi-ghee-offer', handleOpenManual);
+    return () => {
+      window.removeEventListener('open-kyochi-ghee-offer', handleOpenManual);
+    };
   }, []);
 
   const handleClose = () => {
