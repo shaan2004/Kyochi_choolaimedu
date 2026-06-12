@@ -73,7 +73,7 @@ export const Footer: React.FC = () => {
           <ul className="space-y-2.5 text-sm">
             <li>
               <a href="#about" onClick={(e) => handleLinkClick(e, '#about')} className="hover:text-gold transition-colors">
-                About Our Center
+                Why choose Visually Impaired Therapists
               </a>
             </li>
             <li>
@@ -83,7 +83,7 @@ export const Footer: React.FC = () => {
             </li>
             <li>
               <a href="#benefits" onClick={(e) => handleLinkClick(e, '#benefits')} className="hover:text-gold transition-colors">
-                Why choose Visually Impaired Therapists
+                Health benefits of foot reflexology
               </a>
             </li>
             <li>
