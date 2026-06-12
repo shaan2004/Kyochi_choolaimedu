@@ -54,6 +54,11 @@ const PopupBooking = dynamic(
   { ssr: true }
 );
 
+const OfferSlideOver = dynamic(
+  () => import('@/components/ui/OfferSlideOver').then((mod) => mod.OfferSlideOver),
+  { ssr: true }
+);
+
 export default function Home() {
   return (
     <>
@@ -75,6 +80,7 @@ export default function Home() {
       {/* Floating social contact channels & scroll triggered reservation popup */}
       <FloatingSocials />
       <PopupBooking />
+      <OfferSlideOver />
     </>
   );
 }

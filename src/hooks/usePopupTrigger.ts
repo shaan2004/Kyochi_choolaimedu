@@ -9,11 +9,12 @@ export function usePopupTrigger() {
     if (typeof window === 'undefined') return;
 
     const handleScroll = () => {
+      if (window.scrollY < 20) return;
       const statsElement = document.getElementById('stats');
       if (statsElement) {
         const rect = statsElement.getBoundingClientRect();
-        // If bottom of counters (stats) section has scrolled past the top of the viewport
-        if (rect.bottom <= 0) {
+        // If top of counters (stats) section enters the viewport
+        if (rect.top <= window.innerHeight) {
           setIsOpen(true);
           window.removeEventListener('scroll', handleScroll);
         }
@@ -21,9 +22,6 @@ export function usePopupTrigger() {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Check immediately in case they refresh while already scrolled past
-    handleScroll();
 
     return () => {
       window.removeEventListener('scroll', handleScroll);

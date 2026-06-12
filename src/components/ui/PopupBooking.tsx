@@ -61,11 +61,11 @@ export const PopupBooking: React.FC = () => {
             aria-modal="true"
             aria-labelledby="modal-title"
             className={cn(
-              "relative z-10 w-full h-full sm:h-auto max-w-none sm:max-w-lg bg-surface-dark border border-gold-border/80 shadow-[0_40px_80px_rgba(0,0,0,0.75)] overflow-y-auto max-h-screen sm:max-h-none sm:rounded-3xl flex flex-col"
+              "relative z-10 w-[calc(100%-2rem)] max-w-[400px] sm:max-w-lg bg-surface-dark border border-gold-border/80 shadow-[0_40px_80px_rgba(0,0,0,0.75)] overflow-y-auto max-h-[85vh] sm:max-h-none rounded-2xl sm:rounded-3xl flex flex-col"
             )}
           >
             {/* Banner Image */}
-            <div className="relative w-full h-40 sm:h-44 shrink-0 overflow-hidden">
+            <div className="relative w-full h-20 sm:h-44 shrink-0 overflow-hidden rounded-t-2xl sm:rounded-t-none">
               <Image 
                 src="/assets/og-image.jpg"
                 alt="Kyochi Healing Center"
@@ -74,7 +74,7 @@ export const PopupBooking: React.FC = () => {
                 className="object-cover"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-dark to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface-dark via-surface-dark/40 to-transparent" />
             </div>
 
             {/* Close Button */}
@@ -82,17 +82,17 @@ export const PopupBooking: React.FC = () => {
               onClick={handleClose}
               aria-label="Close booking form"
               suppressHydrationWarning
-              className="absolute top-4 right-4 p-2.5 rounded-full border border-gold-border/20 text-gold hover:bg-gold/10 hover:border-gold/60 bg-surface-dark/40 backdrop-blur-sm transition-all duration-300 cursor-pointer z-20"
+              className="absolute top-3 right-3 p-2 rounded-full border border-gold-border/20 text-gold hover:bg-gold/10 hover:border-gold/60 bg-surface-dark/40 backdrop-blur-sm transition-all duration-300 cursor-pointer z-20"
             >
-              <X size={18} aria-hidden="true" />
+              <X size={16} aria-hidden="true" className="sm:size-[18px]" />
             </button>
 
-            <div className="p-6 sm:p-8 pt-4 sm:pt-6">
-              <div className="mb-5 mt-2">
-                <h2 id="modal-title" className="font-display text-2xl sm:text-3xl font-semibold text-gold mb-1">
+            <div className="p-4 sm:p-8 pt-2.5 sm:pt-6">
+              <div className="mb-3.5 sm:mb-5 mt-1 sm:mt-2">
+                <h2 id="modal-title" className="font-display text-lg sm:text-3xl font-semibold text-gold mb-0.5 sm:mb-1">
                   Book Consultation
                 </h2>
-                <p className="text-xs sm:text-sm text-text-primary/70 font-light">
+                <p className="text-[10px] sm:text-sm text-text-primary/70 font-light">
                   Secure your healing session in 60 seconds on WhatsApp.
                 </p>
               </div>

@@ -40,10 +40,10 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={cn("space-y-4", className)}>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <form onSubmit={handleSubmit(onSubmit)} className={cn("space-y-3 md:space-y-4", className)}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
         <div>
-          <label htmlFor={`${idPrefix}name`} className="block text-xs font-semibold uppercase tracking-widest text-text-primary/70 mb-2">
+          <label htmlFor={`${idPrefix}name`} className="block text-[10px] md:text-xs font-semibold uppercase tracking-widest text-text-primary/70 mb-1.5 md:mb-2">
             Full Name
           </label>
           <input
@@ -56,18 +56,18 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             })}
             suppressHydrationWarning
             className={cn(
-              "w-full px-4.5 py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl",
-              "placeholder-text-primary/25 transition-all duration-300 text-sm md:text-base",
+              "w-full px-3.5 py-2.5 md:px-4.5 md:py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl",
+              "placeholder-text-primary/25 transition-all duration-300 text-xs md:text-base",
               "focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15"
             )}
           />
           {errors.name && (
-            <p className="text-red-400 text-xs mt-1.5 font-medium">{errors.name.message}</p>
+            <p className="text-red-400 text-[10px] md:text-xs mt-1.5 font-medium">{errors.name.message}</p>
           )}
         </div>
 
         <div>
-          <label htmlFor={`${idPrefix}phone`} className="block text-xs font-semibold uppercase tracking-widest text-text-primary/70 mb-2">
+          <label htmlFor={`${idPrefix}phone`} className="block text-[10px] md:text-xs font-semibold uppercase tracking-widest text-text-primary/70 mb-1.5 md:mb-2">
             Phone Number
           </label>
           <input
@@ -83,19 +83,19 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             })}
             suppressHydrationWarning
             className={cn(
-              "w-full px-4.5 py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl",
-              "placeholder-text-primary/25 transition-all duration-300 text-sm md:text-base",
+              "w-full px-3.5 py-2.5 md:px-4.5 md:py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl",
+              "placeholder-text-primary/25 transition-all duration-300 text-xs md:text-base",
               "focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15"
             )}
           />
           {errors.phone && (
-            <p className="text-red-400 text-xs mt-1.5 font-medium">{errors.phone.message}</p>
+            <p className="text-red-400 text-[10px] md:text-xs mt-1.5 font-medium">{errors.phone.message}</p>
           )}
         </div>
       </div>
 
       <div>
-        <label htmlFor={`${idPrefix}service-select`} className="block text-xs font-semibold uppercase tracking-widest text-text-primary/70 mb-2">
+        <label htmlFor={`${idPrefix}service-select`} className="block text-[10px] md:text-xs font-semibold uppercase tracking-widest text-text-primary/70 mb-1.5 md:mb-2">
           Select Therapy
         </label>
         <select
@@ -103,8 +103,8 @@ export const BookingForm: React.FC<BookingFormProps> = ({
           {...register('service', { required: 'Please select a service' })}
           suppressHydrationWarning
           className={cn(
-            "w-full px-4.5 py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl cursor-pointer",
-            "transition-all duration-300 text-sm md:text-base appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23C9A84C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:18px] bg-[right_1rem_center] bg-no-repeat",
+            "w-full px-3.5 py-2.5 md:px-4.5 md:py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl cursor-pointer",
+            "transition-all duration-300 text-xs md:text-base appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%23C9A84C%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:14px_14px] md:bg-[length:18px_18px] bg-[right_0.75rem_center] md:bg-[right_1rem_center] bg-no-repeat",
             "focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15"
           )}
         >
@@ -116,23 +116,23 @@ export const BookingForm: React.FC<BookingFormProps> = ({
           ))}
         </select>
         {errors.service && (
-          <p className="text-red-400 text-xs mt-1.5 font-medium">{errors.service.message}</p>
+          <p className="text-red-400 text-[10px] md:text-xs mt-1.5 font-medium">{errors.service.message}</p>
         )}
       </div>
 
       <div>
-        <label htmlFor={`${idPrefix}message`} className="block text-xs font-semibold uppercase tracking-widest text-text-primary/70 mb-2">
+        <label htmlFor={`${idPrefix}message`} className="block text-[10px] md:text-xs font-semibold uppercase tracking-widest text-text-primary/70 mb-1.5 md:mb-2">
           Specific Concerns (Optional)
         </label>
         <textarea
           id={`${idPrefix}message`}
           placeholder="e.g. Plantar Fasciitis, foot fatigue, lower back pain, etc."
-          rows={3}
+          rows={2}
           {...register('message')}
           suppressHydrationWarning
           className={cn(
-            "w-full px-4.5 py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl resize-none",
-            "placeholder-text-primary/25 transition-all duration-300 text-sm md:text-base",
+            "w-full px-3.5 py-2.5 md:px-4.5 md:py-3.5 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl resize-none",
+            "placeholder-text-primary/25 transition-all duration-300 text-xs md:text-base",
             "focus:outline-none focus:border-gold focus:ring-2 focus:ring-gold/15"
           )}
         />
@@ -141,9 +141,9 @@ export const BookingForm: React.FC<BookingFormProps> = ({
       <GoldButton
         type="submit"
         ariaLabel="Confirm booking and redirect to WhatsApp"
-        className="w-full mt-2 py-3.5 flex justify-center items-center gap-2 font-semibold"
+        className="w-full mt-1.5 py-2.5 md:py-3.5 flex justify-center items-center gap-2 font-semibold text-xs md:text-sm"
       >
-        <MessageCircle size={18} className="fill-gold stroke-none text-black" aria-hidden="true" />
+        <MessageCircle size={16} className="fill-gold stroke-none text-black md:size-[18px]" aria-hidden="true" />
         Book on WhatsApp
       </GoldButton>
     </form>

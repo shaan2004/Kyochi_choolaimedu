@@ -229,8 +229,8 @@ export const BenefitItem: React.FC<BenefitItemProps> = ({ benefit }) => {
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 22 }}
       className={cn(
-        "p-6 rounded-2xl bg-card-dark border border-gold-border-muted",
-        "relative overflow-hidden group min-h-[140px] flex flex-col justify-center"
+        "p-3.5 md:p-6 rounded-2xl bg-card-dark border border-gold-border-muted",
+        "relative overflow-hidden group min-h-[120px] md:min-h-[140px] flex flex-col justify-center"
       )}
     >
       {/* Hover glow background */}
@@ -241,15 +241,15 @@ export const BenefitItem: React.FC<BenefitItemProps> = ({ benefit }) => {
         {isHovered && renderHoverAnimation(id)}
       </AnimatePresence>
 
-      <div className="flex gap-4 relative z-10">
-        <div className="p-3 rounded-xl bg-gold/5 border border-gold/15 text-gold group-hover:bg-gold/10 group-hover:scale-105 transition-all duration-300 shrink-0 self-start">
-          <IconComponent size={22} className="stroke-[1.5]" aria-hidden="true" />
+      <div className="flex flex-col sm:flex-row gap-2.5 md:gap-4 relative z-10">
+        <div className="p-2 md:p-3 rounded-lg md:rounded-xl bg-gold/5 border border-gold/15 text-gold group-hover:bg-gold/10 group-hover:scale-105 transition-all duration-300 shrink-0 self-start">
+          <IconComponent size={18} className="stroke-[1.5] md:size-[22px]" aria-hidden="true" />
         </div>
         <div>
-          <h3 className="font-display font-medium text-lg text-text-primary mb-1.5 group-hover:text-gold-light transition-colors duration-300">
+          <h3 className="font-display font-semibold text-sm md:text-lg text-text-primary mb-1 group-hover:text-gold-light transition-colors duration-300">
             {title}
           </h3>
-          <p className="text-sm text-text-primary/70 leading-relaxed font-light">
+          <p className="text-[10px] md:text-sm text-text-primary/70 leading-relaxed font-light line-clamp-3 sm:line-clamp-none">
             {description}
           </p>
         </div>

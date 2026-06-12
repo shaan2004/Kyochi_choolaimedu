@@ -110,6 +110,17 @@ export const SERVICES: Service[] = [
     priceInr: 1100,
     tags: ['Vitality Boost', '60 Mins'],
     iconName: 'Zap'
+  },
+  {
+    id: 'ghee-therapy',
+    title: 'Ghee Therapy',
+    category: 'healing',
+    excerpt: 'Authentic Ayurvedic foot therapy using pure ghee to heal cracked heels, release body heat, and enhance skin radiance.',
+    description: 'A traditional Ayurvedic foot massage using pure ghee. It draws out excess internal body heat, repairs and cures dry, cracked heels, enhances blood flow for a radiant face glow, and promotes deep, restorative sleep.',
+    durationMin: 60,
+    priceInr: 1850,
+    tags: ['Ayurvedic', 'Crack Heel Cure', '60 Mins'],
+    iconName: 'Sparkles'
   }
 ];
 
@@ -255,7 +266,7 @@ export const FAQS: FAQ[] = [
   {
     id: 'faq-4',
     question: 'How many sessions do I need to see results for chronic pain?',
-    answer: 'For acute stress or mild fatigue, a single session provides immediate relief. For chronic conditions such as plantar fasciitis, severe anxiety, or hormonal imbalances, we recommend a starter course of 3 to 5 sessions spaced weekly, followed by bi-weekly maintenance visits to sustain metabolic balance.'
+    answer: 'For acute stress or mild fatigue, a single session provides immediate relief. For chronic conditions such as plantar fasciitis, severe anxiety, or hormonal imbalances, we recommend a starter course of 5 to 7 sessions spaced weekly, followed by bi-weekly maintenance visits to sustain metabolic balance.'
   },
   {
     id: 'faq-5',
@@ -265,11 +276,11 @@ export const FAQS: FAQ[] = [
   {
     id: 'faq-6',
     question: 'What should I wear to my reflexology session?',
-    answer: 'We recommend wearing loose, comfortable trousers or shorts that can be easily rolled up to the knee. This allows the therapist to access your calf muscles and lower leg lymphatic zones, which are integral to the reflexology treatment.'
+    answer: 'You may wear any comfortable clothing according to your preference. Since the treatment focuses only on the feet, no special attire is required. We recommend wearing something that allows you to relax and enjoy the session comfortably.'
   },
   {
     id: 'faq-7',
-    question: 'How does booking work and why is it completed on WhatsApp?',
-    answer: 'To ensure a seamless booking flow, our website intake form gathers your name, contact details, and selected service. Upon submission, it instantly compiles the data into a pre-formatted message and opens WhatsApp. This connects you directly with our front desk in real-time, allowing us to confirm your therapist and slot in under 60 seconds.'
+    question: 'How does booking work?',
+    answer: 'Our booking form collects your name, contact details, and the service you like to book. Once you submit the form, WhatsApp opens with your booking details already filled in. Simply send the message, and our team will quickly confirm your appointment and preferred time slot.'
   }
 ];
