@@ -3,10 +3,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import * as Icons from 'lucide-react';
+import {
+  Flower2, Brain, Activity, Sparkles, Droplets, Heart,
+  Smile, Baby, Wind, Zap, HelpCircle, type LucideIcon
+} from 'lucide-react';
 import { Service } from '@/types';
 import { OutlineButton } from './OutlineButton';
 import { cn } from '@/lib/utils';
+
+// Explicit icon map — avoids loading the entire Lucide bundle (~500 icons)
+const ICON_MAP: Record<string, LucideIcon> = {
+  Flower2, Brain, Activity, Sparkles, Droplets, Heart,
+  Smile, Baby, Wind, Zap,
+};
 
 interface ServiceCardProps {
   service: Service;
@@ -32,7 +41,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook, prior
   const { id, title, excerpt, tags, iconName } = service;
 
   // Resolve Lucide icon component dynamically
-  const IconComponent = (Icons as any)[iconName] || Icons.HelpCircle;
+  const IconComponent: LucideIcon = ICON_MAP[iconName] || HelpCircle;
 
   const bgImage = serviceBgImages[id] || '/assets/service.png';
 
@@ -77,7 +86,8 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook, prior
           fill
           sizes="(max-width: 768px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-          priority={priority || bgImage.includes('neuropathy')}
+          priority={priority}
+          loading={priority ? 'eager' : 'lazy'}
         />
       </div>
       {/* Dark gradient overlay for text readability on bottom, transparent on top to show real image */}

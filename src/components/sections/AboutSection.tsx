@@ -34,7 +34,7 @@ export const AboutSection: React.FC = () => {
                 src="/assets/about-therapist.png"
                 alt="Tactile reflexology session highlighting the precision of visually impaired therapists at Kyochi"
                 fill
-                priority
+                loading="lazy"
                 className="object-cover transition-transform duration-700 group-hover:scale-103"
                 sizes="(max-width: 768px) 100vw, 450px"
               />

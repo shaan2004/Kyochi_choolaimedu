@@ -142,3 +142,46 @@ body {
   mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
 }
+
+/* ─── Hero Section: CSS-driven animations (no JS dependency) ─────────────────
+   These run as soon as the CSS is parsed, making above-fold content visible
+   before React/Framer Motion hydrates. This is critical for mobile LCP.
+   ──────────────────────────────────────────────────────────────────────────── */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Staggered delays for each hero element */
+.hero-badge {
+  opacity: 0;
+  animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+.hero-h1 {
+  opacity: 0;
+  animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+.hero-sub {
+  opacity: 0;
+  animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+}
+.hero-cta {
+  opacity: 0;
+  animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.35s forwards;
+}
+.hero-badges {
+  opacity: 0;
+  animation: heroFadeIn 1s ease 0.5s forwards;
+}
+

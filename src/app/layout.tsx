@@ -174,6 +174,11 @@ export default function RootLayout({
       className={`${cormorant.variable} ${outfit.variable} h-full scroll-smooth antialiased`}
     >
       <head>
+        <link
+          rel="preload"
+          href="/assets/hero-poster.jpg"
+          as="image"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

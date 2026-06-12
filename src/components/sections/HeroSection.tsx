@@ -71,43 +71,24 @@ export const HeroSection: React.FC = () => {
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24 pb-16 flex flex-col items-center">
         
         {/* Eyebrow badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 15 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-6"
-        >
+        {/* Eyebrow badge */}
+        <div className="mb-6 hero-badge">
           <SectionTag text="Choolaimedu's Premier Reflexology Center" />
-        </motion.div>
+        </div>
 
         {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="font-display text-[clamp(2.5rem,7.5vw,6rem)] font-bold tracking-tight text-text-primary leading-[1.05] mb-6 max-w-4xl"
-        >
+        <h1 className="font-display text-[clamp(2.5rem,7.5vw,6rem)] font-bold tracking-tight text-text-primary leading-[1.05] mb-6 max-w-4xl hero-h1">
           Heal From The <span className="gold-shimmer-text">Ground</span> Up
-        </motion.h1>
+        </h1>
 
         {/* Subheadline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.6 }}
-          className="text-base md:text-lg lg:text-xl text-text-primary font-normal leading-relaxed max-w-2xl mb-8"
-        >
+        <p className="text-base md:text-lg lg:text-xl text-text-primary font-normal leading-relaxed max-w-2xl mb-8 hero-sub">
           Experience India's leading foot reflexology brand. Re-energize your body, relieve stress, and target chronic pain under the expert care of our highly-skilled visually impaired therapists.
-        </motion.p>
+        </p>
 
 
         {/* CTA Buttons Row */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center gap-4.5 w-full sm:w-auto mb-16"
-        >
+        <div className="flex flex-col sm:flex-row items-center gap-4.5 w-full sm:w-auto mb-16 hero-cta">
           <GoldButton
             ariaLabel="Book your reflexology session"
             pulse={true}
@@ -124,15 +105,10 @@ export const HeroSection: React.FC = () => {
             <PlayCircle size={20} className="stroke-[1.5]" />
             Explore Therapies
           </OutlineButton>
-        </motion.div>
+        </div>
 
         {/* Trust Badges Row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 1.0 }}
-          className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl"
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 w-full max-w-3xl hero-badges">
           <div className="flex items-center justify-center gap-2.5 px-5 py-3 rounded-full border border-gold-border/40 bg-card-dark/30 backdrop-blur-sm select-none">
             <Users size={16} className="text-gold" />
             <span className="text-xs md:text-sm font-medium tracking-wide text-text-primary/80">10,000+ Happy Clients</span>
@@ -145,7 +121,7 @@ export const HeroSection: React.FC = () => {
             <Trophy size={16} className="text-gold" />
             <span className="text-xs md:text-sm font-medium tracking-wide text-text-primary/80">9+ Yrs Excellence</span>
           </div>
-        </motion.div>
+        </div>
 
       </div>
 
