@@ -55,7 +55,7 @@ export const HeroSection: React.FC = () => {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="none"
         poster="/assets/hero-poster.jpg"
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-95"
         aria-hidden="true"

@@ -14,6 +14,7 @@ export const StatsSection: React.FC = () => {
     <section
       id="stats"
       ref={ref as any}
+      aria-label="Our Achievements"
       className="py-16 md:py-24 bg-bg-dark border-b border-gold-border/20 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">

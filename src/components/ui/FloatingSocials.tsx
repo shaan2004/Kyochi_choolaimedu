@@ -45,13 +45,16 @@ const FacebookIcon: React.FC<{ size?: number; className?: string }> = ({ size = 
 export const FloatingSocials: React.FC = () => {
   return (
     <div
+      role="group"
+      aria-label="Quick contact options"
       className={cn(
         "z-40 pointer-events-none fixed right-4 md:right-6 top-1/2 -translate-y-1/2 flex flex-col space-y-3.5"
       )}
     >
       <motion.button
         onClick={() => window.dispatchEvent(new CustomEvent('open-kyochi-ghee-offer'))}
-        aria-label="View promotional offer"
+        aria-label="View Ghee Therapy Special Offer — ₹1250 (Save ₹600)"
+        title="View Ghee Therapy Special Offer"
         whileHover={{ scale: 1.12, y: -4 }}
         whileTap={{ scale: 0.9 }}
         className={cn(

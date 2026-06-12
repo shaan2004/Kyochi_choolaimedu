@@ -25,6 +25,7 @@ export const FAQSection: React.FC = () => {
     <section
       id="faq"
       ref={ref as any}
+      aria-label="Frequently Asked Questions"
       className="py-20 md:py-28 bg-bg-dark border-b border-gold-border/20 relative overflow-hidden"
     >
       <div className="max-w-3xl mx-auto px-6 relative z-10">

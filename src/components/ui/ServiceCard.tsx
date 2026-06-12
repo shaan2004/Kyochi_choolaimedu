@@ -77,7 +77,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook, prior
           fill
           sizes="(max-width: 768px) 50vw, 33vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-          priority={priority}
+          priority={priority || bgImage.includes('neuropathy')}
         />
       </div>
       {/* Dark gradient overlay for text readability on bottom, transparent on top to show real image */}

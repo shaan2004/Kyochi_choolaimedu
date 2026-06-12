@@ -1,11 +1,13 @@
 import { MetadataRoute } from 'next';
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kyochi.in';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://www.kyochi.in',
+      url: SITE_URL,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: 'weekly',
       priority: 1,
     },
   ];

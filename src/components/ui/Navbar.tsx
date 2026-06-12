@@ -103,10 +103,13 @@ export const Navbar: React.FC = () => {
               className="flex items-center group cursor-pointer focus:outline-none focus:ring-1 focus:ring-gold rounded"
             >
               <div className="relative w-32 h-10 md:w-36 md:h-12 group-hover:scale-105 transition-all duration-300">
-                <img 
-                  src="/assets/logo.png?v=2" 
-                  alt="Kyochi Art of Healing" 
-                  className="w-full h-full object-contain"
+                <Image
+                  src="/assets/logo.png"
+                  alt="Kyochi Art of Healing"
+                  fill
+                  priority
+                  className="object-contain"
+                  sizes="(max-width: 768px) 128px, 144px"
                 />
               </div>
             </a>

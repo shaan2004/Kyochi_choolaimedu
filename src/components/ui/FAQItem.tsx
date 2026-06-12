@@ -13,13 +13,17 @@ interface FAQItemProps {
 }
 
 export const FAQItem: React.FC<FAQItemProps> = ({ faq, isOpen, onToggle }) => {
-  const { question, answer } = faq;
+  const { id, question, answer } = faq;
+  const answerId = `faq-answer-${id}`;
+  const buttonId = `faq-btn-${id}`;
 
   return (
     <div className="border-b border-gold-border/30 last:border-0 py-4.5">
       <button
+        id={buttonId}
         onClick={onToggle}
         aria-expanded={isOpen}
+        aria-controls={answerId}
         suppressHydrationWarning
         className="flex justify-between items-center w-full text-left font-display font-medium text-[17px] md:text-[19px] text-text-primary hover:text-gold-light transition-colors duration-300 py-1.5 focus:outline-none focus:text-gold-light group cursor-pointer"
       >
@@ -37,6 +41,9 @@ export const FAQItem: React.FC<FAQItemProps> = ({ faq, isOpen, onToggle }) => {
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
+            id={answerId}
+            role="region"
+            aria-labelledby={buttonId}
             key="faq-content"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}

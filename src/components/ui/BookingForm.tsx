@@ -21,7 +21,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   className,
   idPrefix = 'booking-',
 }) => {
-  const { register, handleSubmit, formState: { errors } } = useForm<WhatsAppBookingData>({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<WhatsAppBookingData>({
     defaultValues: {
       name: '',
       phone: '',
@@ -31,13 +31,32 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   });
 
   const { sendWhatsAppMessage } = useWhatsApp();
+  const [submitted, setSubmitted] = React.useState(false);
 
   const onSubmit = (data: WhatsAppBookingData) => {
     sendWhatsAppMessage(data);
+    setSubmitted(true);
     if (onSuccess) {
       onSuccess();
     }
+    // Reset confirmation message after 8 seconds
+    setTimeout(() => setSubmitted(false), 8000);
   };
+
+  if (submitted) {
+    return (
+      <div className={cn("flex flex-col items-center justify-center gap-4 py-10 text-center", className)}>
+        <div className="w-14 h-14 rounded-full bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center">
+          <MessageCircle size={28} className="text-emerald-500" />
+        </div>
+        <h4 className="font-display text-xl font-semibold text-text-primary">Message Sent!</h4>
+        <p className="text-sm text-text-primary/70 max-w-xs leading-relaxed">
+          Your booking request has been sent via WhatsApp. Our team will confirm your appointment shortly.
+        </p>
+        <p className="text-xs text-gold font-medium">Please check your WhatsApp for our reply.</p>
+      </div>
+    );
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={cn("space-y-3 md:space-y-4", className)}>
@@ -50,6 +69,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             id={`${idPrefix}name`}
             type="text"
             placeholder="Your full name"
+            autoComplete="name"
             {...register('name', {
               required: 'Name is required',
               minLength: { value: 2, message: 'Name must be at least 2 characters' },
@@ -74,6 +94,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             id={`${idPrefix}phone`}
             type="tel"
             placeholder="9876543210"
+            autoComplete="tel"
             {...register('phone', {
               required: 'Phone number is required',
               pattern: {

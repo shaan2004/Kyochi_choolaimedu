@@ -14,6 +14,11 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
   const { name, stars, serviceTag, testimonial, date, location } = review;
 
   return (
+    <article
+      itemScope
+      itemType="https://schema.org/Review"
+      aria-label={`Review by ${name}`}
+    >
     <motion.div
       initial={{ borderColor: "rgba(201, 168, 76, 0.09)" }}
       whileHover={{ 
@@ -61,5 +66,6 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
         </span>
       </div>
     </motion.div>
+    </article>
   );
 };

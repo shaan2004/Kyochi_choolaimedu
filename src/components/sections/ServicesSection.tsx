@@ -27,6 +27,7 @@ export const ServicesSection: React.FC = () => {
     <section
       id="services"
       ref={ref as any}
+      aria-label="Our Reflexology Services"
       className="py-20 md:py-28 bg-bg-dark border-b border-gold-border/20 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -48,6 +49,7 @@ export const ServicesSection: React.FC = () => {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id as any)}
+              aria-pressed={activeCategory === cat.id}
               suppressHydrationWarning
               className={cn(
                 "px-5 py-2.5 rounded-full text-xs md:text-sm font-semibold tracking-wider border cursor-pointer transition-all duration-300",

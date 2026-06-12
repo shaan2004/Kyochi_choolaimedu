@@ -27,10 +27,12 @@ export const Footer: React.FC = () => {
         <div className="space-y-4">
           <div className="flex items-center">
             <div className="relative w-32 h-10">
-              <img 
-                src="/assets/logo.png?v=2" 
-                alt="Kyochi Art of Healing" 
-                className="w-full h-full object-contain"
+              <Image
+                src="/assets/logo.png"
+                alt="Kyochi Art of Healing — Foot Reflexology Center"
+                fill
+                className="object-contain"
+                sizes="128px"
               />
             </div>
           </div>
@@ -102,7 +104,7 @@ export const Footer: React.FC = () => {
           <h3 className="font-display text-lg font-semibold text-text-primary border-b border-gold-border/20 pb-2">
             Contact Us
           </h3>
-          <ul className="space-y-3.5 text-sm">
+          <address className="not-italic space-y-3.5 text-sm">
             <li className="flex items-start gap-2.5">
               <MapPin size={18} className="text-gold shrink-0 mt-0.5" />
               <div>
@@ -136,11 +138,9 @@ export const Footer: React.FC = () => {
             </li>
             <li className="flex items-center gap-2.5">
               <Clock size={16} className="text-gold shrink-0" />
-              <span className="text-xs">
-                Mon - Sun: 10:00 AM - 08:00 PM
-              </span>
+              <span className="text-xs">Mon - Sun: 10:00 AM - 08:00 PM</span>
             </li>
-          </ul>
+          </address>
         </div>
 
       </div>
@@ -151,7 +151,7 @@ export const Footer: React.FC = () => {
           Serving clients across Choolaimedu, Anna Nagar, Kilpauk, Nungambakkam, Aminjikarai, Chetpet, Kodambakkam, West Mambalam, T-Nagar, and all of Chennai, Tamil Nadu.
         </p>
         <p className="font-light">
-          &copy; {currentYear} Kyochi — Art of Healing. All Rights Reserved. | <a href="#" className="hover:text-gold">Privacy Policy</a> | <a href="#" className="hover:text-gold">Terms of Service</a>
+          &copy; {currentYear} Kyochi — Art of Healing. All Rights Reserved.
         </p>
       </div>
     </footer>

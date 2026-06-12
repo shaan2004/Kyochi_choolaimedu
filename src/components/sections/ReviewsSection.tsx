@@ -44,9 +44,17 @@ export const ReviewsSection: React.FC = () => {
               src="/assets/client-review.mp4"
               controls
               playsInline
-              preload="metadata"
+              preload="none"
               className="w-full h-auto aspect-video object-contain"
-            />
+              aria-label="Kyochi client review video testimonial"
+            >
+              <track
+                kind="captions"
+                label="English captions"
+                srcLang="en"
+                default
+              />
+            </video>
           </motion.div>
 
           {/* Right Column: About Us & Instagram Page */}
