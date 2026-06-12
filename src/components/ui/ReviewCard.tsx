@@ -37,6 +37,20 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
       >
         <span itemProp="name">Kyochi — Art of Healing</span>
         <span itemProp="url">https://www.kyochi.in</span>
+        <span itemProp="telephone">+919566001066</span>
+        <span itemProp="priceRange">₹₹</span>
+        <meta itemProp="image" content="https://www.kyochi.in/assets/logo.png" />
+        <span
+          itemProp="address"
+          itemScope
+          itemType="https://schema.org/PostalAddress"
+        >
+          <span itemProp="streetAddress">No 14/5 Indira Gandhi 3rd Street, Near MMDA Bus Depot, Choolaimedu</span>
+          <span itemProp="addressLocality">Chennai</span>
+          <span itemProp="addressRegion">Tamil Nadu</span>
+          <span itemProp="postalCode">600094</span>
+          <span itemProp="addressCountry">IN</span>
+        </span>
       </span>
 
       {/* Hidden reviewRating */}
