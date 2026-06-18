@@ -166,57 +166,57 @@ export const BENEFITS: Benefit[] = [
 export const REVIEWS: Review[] = [
   {
     id: 'rev-1',
-    name: 'Anirudh Raghavan',
+    name: 'Haritha',
     stars: 5,
-    serviceTag: 'Chronic Pain Reflexology',
-    testimonial: 'I suffered from plantar fasciitis for 6 months. After just 3 sessions with the visually impaired therapist at Kyochi, my heel pain has completely vanished. Their tactile precision is unbelievable!',
-    date: '2 Weeks Ago',
-    location: 'Nungambakkam'
+    serviceTag: 'Relaxation Reflexology',
+    testimonial: 'Excellent foot therapy. I would highly recommend this. From start to finish done entirely by hands, activating each nerve in the foot. In a regular pedicure we hardly get 10 mins of massage, but here the entire session is pure therapy. The team is very friendly and they create meaningful employment opportunities for visually impaired individuals.',
+    date: '4 Days Ago',
+    location: 'Choolaimedu'
   },
   {
     id: 'rev-2',
-    name: 'Deepika Sundar',
+    name: 'Varun V',
     stars: 5,
-    serviceTag: 'Relaxation Reflexology',
-    testimonial: 'The absolute best foot reflexology in Chennai. The atmosphere is quiet, clean, and smells wonderful. The therapists are extremely respectful, and the herbal soak before the massage is pure heaven.',
-    date: '1 Month Ago',
+    serviceTag: 'Face Detox',
+    testimonial: 'It\'s my 4th week doing face detox and the results are improving week by week. As my work consists of a lot of travelling during the day in the hot sun with dust and pollution, my face gets puffy by night. This face detox really helped me regain my actual debloated face back. Thank you Kyochi, especially Gopal sir!',
+    date: '6 Days Ago',
     location: 'Choolaimedu'
   },
   {
     id: 'rev-3',
-    name: 'Vikram Sethupathi',
+    name: 'Maha',
     stars: 5,
     serviceTag: 'De-Stress Reflexology',
-    testimonial: 'As an IT professional sitting 10 hours a day, my feet and lower back are always tense. The De-Stress session at Kyochi is my weekly ritual. Immediate relaxation, highly recommended!',
-    date: '3 Days Ago',
-    location: 'Anna Nagar'
+    testimonial: 'Must visit place for foot therapy. The team handling the clients is amazing and truly appreciated. Prime and well-maintained place with an average cost that makes it worth the experience. The therapists are well-trained and it\'s inspiring to see them work.',
+    date: '6 Days Ago',
+    location: 'Choolaimedu'
   },
   {
     id: 'rev-4',
-    name: 'Meera Krishnan',
+    name: 'Sandeep K',
     stars: 5,
-    serviceTag: 'Soul Serenity',
-    testimonial: 'I had severe sleep issues and anxiety. My therapist worked extensively on my toes (pineal gland points). I slept like a baby that very night. It feels magical but is pure therapeutic science.',
-    date: '3 Weeks Ago',
-    location: 'Kilpauk'
+    serviceTag: 'Vita Flex',
+    testimonial: 'Had a wonderful experience at Kyochi Foot Reflexology Choolaimedu branch. The therapy was very relaxing and rejuvenating. The visually impaired therapists have incredible touch sensitivity and precision.',
+    date: '2 Weeks Ago',
+    location: 'Choolaimedu'
   },
   {
     id: 'rev-5',
-    name: 'Dr. Rajesh Kumar',
+    name: 'Rexy Arockiyasamy',
     stars: 5,
-    serviceTag: 'Vita Flex',
-    testimonial: 'I recommend Kyochi to my patients looking for complementary therapies. Their hygienic practices, respect for patients, and scientific approach to reflexology mapping are top-tier in Chennai.',
-    date: '1 Month Ago',
-    location: 'Chetpet'
+    serviceTag: 'Chronic Pain Reflexology',
+    testimonial: 'Very good service. I tried it and my heel pain is completely gone. I decided to take it monthly three times. Thank you!',
+    date: '2 Weeks Ago',
+    location: 'Choolaimedu'
   },
   {
     id: 'rev-6',
-    name: 'Shalini Swaminathan',
+    name: 'Nobi Dhanush',
     stars: 5,
-    serviceTag: 'Femme Cycle',
-    testimonial: 'My feet swelling during pregnancy was a major issue. The therapist was so gentle and used light pumping movements. The swelling reduced significantly by the next morning. Lifesavers!',
-    date: '2 Months Ago',
-    location: 'Aminjikarai'
+    serviceTag: 'Relaxation Reflexology',
+    testimonial: 'I visited Kyochi Foot Reflexology Choolaimedu for a relaxation session and was extremely satisfied. The ambiance is welcoming and peaceful, and the service quality is exceptional. The reflexology treatment was very effective in relieving stress and tiredness. One of the most professional wellness centres in Choolaimedu.',
+    date: '1 Week Ago',
+    location: 'Choolaimedu'
   }
 ];
 

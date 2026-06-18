@@ -52,6 +52,7 @@ export const FloatingSocials: React.FC = () => {
       )}
     >
       <motion.button
+        suppressHydrationWarning
         onClick={() => window.dispatchEvent(new CustomEvent('open-kyochi-ghee-offer'))}
         aria-label="View Ghee Therapy Special Offer — ₹1250 (Save ₹600)"
         title="View Ghee Therapy Special Offer"

@@ -29,6 +29,11 @@ const ReviewsSection = dynamic(
   { ssr: true }
 );
 
+const BlogSection = dynamic(
+  () => import('@/components/sections/BlogSection').then((mod) => mod.BlogSection),
+  { ssr: true }
+);
+
 const FAQSection = dynamic(
   () => import('@/components/sections/FAQSection').then((mod) => mod.FAQSection),
   { ssr: true }
@@ -71,6 +76,7 @@ export default function Home() {
         <ServicesSection />
         <BenefitsSection />
         <ReviewsSection />
+        <BlogSection />
         <FAQSection />
         <BookingSection />
       </main>

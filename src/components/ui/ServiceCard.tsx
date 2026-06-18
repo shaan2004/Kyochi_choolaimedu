@@ -75,7 +75,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook, prior
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 22 }}
       className={cn(
-        "flex flex-col w-full rounded-2xl md:rounded-3xl border border-gold-border/30 overflow-hidden group shadow-xl relative min-h-[300px] md:min-h-[360px]"
+        "flex flex-col w-full rounded-xl md:rounded-3xl border border-gold-border/30 overflow-hidden group shadow-xl relative min-h-[190px] xs:min-h-[220px] sm:min-h-[280px] md:min-h-[360px]"
       )}
     >
       {/* Full Background Image */}
@@ -94,17 +94,17 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook, prior
       <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-transparent z-[1]" />
 
       {/* Content overlaid on top of background */}
-      <div className="relative z-10 p-4 md:p-8 flex flex-col justify-end flex-grow">
-        <div className="flex justify-between items-start mb-2 md:mb-4">
-          <div className="p-1.5 md:p-2.5 rounded-lg md:rounded-xl bg-gold/15 border border-gold/30 text-gold backdrop-blur-sm">
-            <IconComponent size={16} className="stroke-[1.5] md:size-[20px]" aria-hidden="true" />
+      <div className="relative z-10 p-2.5 sm:p-5 md:p-8 flex flex-col justify-end flex-grow">
+        <div className="flex justify-between items-start mb-1 md:mb-4">
+          <div className="p-1 sm:p-2 md:p-2.5 rounded-md md:rounded-xl bg-gold/15 border border-gold/30 text-gold backdrop-blur-sm">
+            <IconComponent size={12} className="stroke-[1.5] sm:size-[16px] md:size-[20px]" aria-hidden="true" />
           </div>
           <div className="flex flex-wrap gap-1 justify-end">
             {tags.map((tag, idx) => (
               <span
                 key={idx}
                 className={cn(
-                  "text-[8px] md:text-[9px] font-bold tracking-wider uppercase bg-gold/15 text-gold border border-gold/30 px-2.5 py-0.5 rounded-full backdrop-blur-sm",
+                  "text-[7px] sm:text-[8px] md:text-[9px] font-bold tracking-wider uppercase bg-gold/15 text-gold border border-gold/30 px-1.5 sm:px-2.5 py-0.5 rounded-full backdrop-blur-sm",
                   idx > 0 && "hidden sm:inline-block" // Hide subsequent tags on mobile
                 )}
               >
@@ -114,30 +114,30 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook, prior
           </div>
         </div>
 
-        <h3 className="font-display text-sm md:text-2xl font-bold text-white mb-1 group-hover:text-gold transition-colors duration-300 line-clamp-1 md:line-clamp-none">
+        <h3 className="font-display text-[11px] xs:text-xs sm:text-lg md:text-2xl font-bold text-white mb-0.5 group-hover:text-gold transition-colors duration-300 line-clamp-1 md:line-clamp-none">
           {title}
         </h3>
 
         {/* Duration & Price Display */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-2 mb-2 md:mb-3 text-[10px] md:text-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-0.5 sm:gap-2 mb-1.5 md:mb-3 text-[8px] sm:text-xs md:text-sm">
           <span className="font-bold text-gold">
             {id === 'relaxation' ? '₹500 - ₹700' : id === 'destress' ? '₹600 - ₹800' : id === 'chronic-pain' ? '₹650 - ₹850' : `₹${service.priceInr}`}
           </span>
           <span className="hidden sm:inline text-xs text-white/30">•</span>
-          <span className="text-[9px] md:text-xs font-medium text-white/80">
+          <span className="text-[8px] sm:text-xs font-medium text-white/80">
             {id === 'relaxation' || id === 'destress' || id === 'chronic-pain' ? '30/40/60 Mins' : `${service.durationMin} Mins`}
           </span>
         </div>
 
-        <p className="text-[10px] md:text-sm text-white/80 mb-3 md:mb-6 leading-normal md:leading-relaxed font-normal line-clamp-2 md:line-clamp-3">
+        <p className="text-[8px] sm:text-xs md:text-sm text-white/80 mb-2 sm:mb-4 md:mb-6 leading-normal md:leading-relaxed font-normal line-clamp-2 md:line-clamp-3">
           {excerpt}
         </p>
 
-        <div className="pt-1 md:pt-2">
+        <div className="pt-0.5 md:pt-2">
           <OutlineButton
             onClick={handleBookClick}
             ariaLabel={`Book ${title}`}
-            className="w-full md:w-[150px] py-1.5 md:py-2.5 text-[10px] md:text-sm font-semibold rounded-lg md:rounded-xl bg-white/10 backdrop-blur-sm border-gold-border/40 text-white hover:bg-gold hover:text-black transition-all duration-300"
+            className="w-full md:w-[150px] py-1 sm:py-2 md:py-2.5 text-[8px] sm:text-xs md:text-sm font-semibold rounded-md sm:rounded-xl bg-white/10 backdrop-blur-sm border-gold-border/40 text-white hover:bg-gold hover:text-black transition-all duration-300"
           >
             Book Now
           </OutlineButton>
