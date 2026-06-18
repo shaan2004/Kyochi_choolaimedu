@@ -162,7 +162,7 @@ export const OfferSlideOver: React.FC = () => {
             </div>
 
             {/* Content Body */}
-            <div className="p-4 md:p-10 flex-grow flex flex-col justify-between">
+            <div className="p-4 md:p-10 flex-grow flex flex-col justify-start space-y-4 md:space-y-6">
               
               {!isSubmitted ? (
                 /* Form View */
@@ -271,7 +271,7 @@ export const OfferSlideOver: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="space-y-4 md:space-y-6 text-center my-auto flex flex-col items-center"
+                  className="space-y-4 md:space-y-6 text-center w-full flex flex-col items-center py-4"
                 >
                   <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center text-gold animate-bounce mb-1 md:mb-2">
                     <Sparkles size={20} className="md:size-[28px]" />
@@ -334,7 +334,7 @@ export const OfferSlideOver: React.FC = () => {
               )}
 
               {/* T&C Footer */}
-              <div className="mt-6 md:mt-8 pt-3 md:pt-4 border-t border-gold-border/20 text-center">
+              <div className="pt-3 md:pt-4 border-t border-gold-border/20 text-center w-full">
                 <p className="text-[8px] md:text-[10px] text-text-primary/40 leading-relaxed font-light">
                   *Offer valid for Ghee Therapy (60 Mins) only. Coupon code expires soon. One claim per user. Show code at the reception desk to redeem.
                 </p>
