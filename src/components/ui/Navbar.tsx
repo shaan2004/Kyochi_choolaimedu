@@ -87,7 +87,7 @@ export const Navbar: React.FC = () => {
             isScrolled ? "h-0 opacity-0" : "h-9 opacity-100"
           )}
         >
-          <div className="max-w-7xl mx-auto px-4 h-full flex justify-between items-center">
+          <div className="w-full px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-24 h-full flex justify-between items-center">
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1.5">
                 <MapPin size={11} className="text-gold" /> Choolaimedu, Chennai
@@ -113,28 +113,28 @@ export const Navbar: React.FC = () => {
               : "py-5 bg-transparent border-transparent"
           )}
         >
-          <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
+          <div className="w-full px-4 md:px-8 lg:px-12 xl:px-16 2xl:px-24 flex justify-between items-center">
             
             {/* Logo Brand Identity */}
             <a 
               href="#" 
               onClick={(e) => handleLinkClick(e, '#')}
-              className="flex items-center group cursor-pointer focus:outline-none focus:ring-1 focus:ring-gold rounded"
+              className="flex items-center group cursor-pointer focus:outline-none focus:ring-1 focus:ring-gold rounded mr-12 md:mr-20 lg:mr-24 shrink-0"
             >
-              <div className="relative w-40 h-20 md:w-56 md:h-28 group-hover:scale-105 transition-all duration-300">
+              <div className="relative w-36 h-12 md:w-48 md:h-14 group-hover:scale-105 transition-all duration-300">
                 <Image
                   src="/assets/Kyochi_Choolaimedu.png"
                   alt="Kyochi Choolaimedu Art of Healing"
                   fill
                   priority
-                  className="object-contain"
+                  className="object-contain object-left scale-[1.7] md:scale-[2] origin-left"
                   sizes="(max-width: 768px) 192px, 224px"
                 />
               </div>
             </a>
 
             {/* Desktop Navigation Links */}
-            <div className="hidden lg:flex items-center gap-8">
+            <div className="hidden lg:flex items-center gap-5 xl:gap-8">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
@@ -149,7 +149,7 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Contact Info & CTA */}
-            <div className="hidden lg:flex items-center gap-4">
+            <div className="hidden lg:flex items-center gap-4 xl:gap-6 shrink-0">
               <a
                 href="tel:+919566001066"
                 className="flex items-center gap-1.5 text-sm text-text-primary/80 hover:text-gold transition-colors duration-300"
