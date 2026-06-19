@@ -4,6 +4,8 @@ import { BlogPost } from '@/lib/models/BlogPost';
 import { User } from '@/lib/models/User';
 import { verifyAccessToken, sanitizeHtml, getCorsHeaders } from '@/lib/security';
 
+export const revalidate = 3600; // Cache API responses for 1 hour
+
 // Helper to check JWT auth in API routes
 function getAuthenticatedUser(request: Request) {
   const authHeader = request.headers.get('Authorization');

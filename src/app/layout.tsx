@@ -172,6 +172,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${cormorant.variable} ${outfit.variable} h-full scroll-smooth antialiased`}
+      data-scroll-behavior="smooth"
     >
       <head>
         <link

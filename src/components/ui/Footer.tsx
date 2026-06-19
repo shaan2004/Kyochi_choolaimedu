@@ -92,6 +92,11 @@ export const Footer: React.FC = () => {
               </a>
             </li>
             <li>
+              <a href="#blog" onClick={(e) => handleLinkClick(e, '#blog')} className="hover:text-gold transition-colors">
+                Wellness Blog
+              </a>
+            </li>
+            <li>
               <a href="#faq" onClick={(e) => handleLinkClick(e, '#faq')} className="hover:text-gold transition-colors">
                 Frequently Asked Questions
               </a>

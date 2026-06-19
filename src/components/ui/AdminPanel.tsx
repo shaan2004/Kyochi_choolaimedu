@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 interface User {
   username: string;
@@ -580,10 +581,11 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                   <label className="block text-xs uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Preview</label>
                   {editorImage ? (
                     <div className="relative h-28 w-56 rounded-xl overflow-hidden border border-gold-border/30 bg-surface-dark">
-                      <img 
+                      <Image 
                         src={editorImage} 
                         alt="Featured upload preview" 
-                        className="h-full w-full object-cover"
+                        fill
+                        className="object-cover"
                       />
                     </div>
                   ) : (
@@ -783,8 +785,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                       <div key={post._id} className="p-4 rounded-2xl border border-gold-border/20 bg-surface-dark/15 flex flex-col gap-3 shadow-sm">
                         <div className="flex gap-3">
                           {post.featuredImage && (
-                            <div className="h-14 w-20 rounded-lg overflow-hidden shrink-0 border border-gold-border/20 bg-surface-dark/10">
-                              <img src={post.featuredImage} alt="" className="h-full w-full object-cover" />
+                            <div className="relative h-14 w-20 rounded-lg overflow-hidden shrink-0 border border-gold-border/20 bg-surface-dark/10">
+                              <Image src={post.featuredImage} alt="" fill className="object-cover" sizes="80px" />
                             </div>
                           )}
                           <div className="min-w-0 flex-grow">
@@ -857,8 +859,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                             <td className="p-4 max-w-xs sm:max-w-md">
                               <div className="flex items-center gap-3">
                                 {post.featuredImage && (
-                                  <div className="h-10 w-14 rounded-lg overflow-hidden shrink-0 border border-gold-border/20">
-                                    <img src={post.featuredImage} alt="" className="h-full w-full object-cover" />
+                                  <div className="relative h-10 w-14 rounded-lg overflow-hidden shrink-0 border border-gold-border/20">
+                                    <Image src={post.featuredImage} alt="" fill className="object-cover" sizes="56px" />
                                   </div>
                                 )}
                                 <div>

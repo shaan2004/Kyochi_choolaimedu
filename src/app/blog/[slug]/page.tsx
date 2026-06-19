@@ -13,6 +13,8 @@ interface BlogPageProps {
   params: Promise<{ slug: string }>;
 }
 
+export const revalidate = 3600; // Cache blog pages for 1 hour (ISR)
+
 // -------------------------------------------------------------
 // Dynamic SEO Metadata Generation
 // -------------------------------------------------------------
@@ -93,12 +95,30 @@ export default async function BlogPage({ params }: BlogPageProps) {
         year: 'numeric',
       });
 
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": post.title,
+    "image": [post.featuredImage],
+    "datePublished": post.publishedAt || post.createdAt,
+    "dateModified": post.updatedAt || post.publishedAt || post.createdAt,
+    "author": [{
+      "@type": "Person",
+      "name": post.author?.username || 'Kyochi Specialist',
+      "url": "https://www.kyochi.in/about"
+    }]
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <Navbar />
       
-      <main id="main-content" className="flex-grow pt-28 pb-20 bg-bg-dark">
-        <div className="max-w-4xl mx-auto px-6">
+      <main id="main-content" className="flex-grow pt-36 md:pt-40 pb-20 bg-bg-dark">
+        <div className="max-w-4xl mx-auto px-6 relative z-10">
           
           {/* Back Button */}
           <Link
