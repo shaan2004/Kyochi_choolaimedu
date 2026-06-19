@@ -118,7 +118,7 @@ export const SERVICES: Service[] = [
     excerpt: 'Authentic Ayurvedic foot therapy using pure ghee to heal cracked heels, release body heat, and enhance skin radiance.',
     description: 'A traditional Ayurvedic foot massage using pure ghee. It draws out excess internal body heat, repairs and cures dry, cracked heels, enhances blood flow for a radiant face glow, and promotes deep, restorative sleep.',
     durationMin: 60,
-    priceInr: 1850,
+    priceInr: 2813,
     tags: ['Ayurvedic', 'Crack Heel Cure', '60 Mins'],
     iconName: 'Sparkles'
   }

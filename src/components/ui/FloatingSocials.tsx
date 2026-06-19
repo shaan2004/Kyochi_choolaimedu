@@ -54,7 +54,7 @@ export const FloatingSocials: React.FC = () => {
       <motion.button
         suppressHydrationWarning
         onClick={() => window.dispatchEvent(new CustomEvent('open-kyochi-ghee-offer'))}
-        aria-label="View Ghee Therapy Special Offer — ₹1250 (Save ₹600)"
+        aria-label="View Ghee Therapy Special Offer — ₹1500 (Save ₹1313)"
         title="View Ghee Therapy Special Offer"
         whileHover={{ scale: 1.12, y: -4 }}
         whileTap={{ scale: 0.9 }}

@@ -83,17 +83,18 @@ export default async function BlogPage({ params }: BlogPageProps) {
   }
 
   const readingTime = calculateReadingTime(post.content);
+  const dateOptions: Intl.DateTimeFormatOptions = {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true,
+  };
+
   const formattedDate = post.publishedAt 
-    ? new Date(post.publishedAt).toLocaleDateString('en-IN', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      })
-    : new Date(post.createdAt).toLocaleDateString('en-IN', {
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric',
-      });
+    ? new Date(post.publishedAt).toLocaleString('en-IN', dateOptions)
+    : new Date(post.createdAt).toLocaleString('en-IN', dateOptions);
 
   const articleJsonLd = {
     "@context": "https://schema.org",

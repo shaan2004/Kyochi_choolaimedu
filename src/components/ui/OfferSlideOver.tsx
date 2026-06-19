@@ -94,7 +94,7 @@ export const OfferSlideOver: React.FC = () => {
     const fields = [
       `*Name:* ${data.name}`,
       `*Phone:* ${data.phone}`,
-      `*Offer:* Ghee Therapy (₹1250 instead of ₹1850)`,
+      `*Offer:* Ghee Therapy (₹1500 instead of ₹2813)`,
       `*Offer Code:* ${code}`,
     ].join('\n');
 
@@ -180,15 +180,15 @@ export const OfferSlideOver: React.FC = () => {
                   <div className="flex items-center gap-2.5 md:gap-4 bg-bg-dark border border-gold-border/40 p-3 md:p-4 rounded-2xl">
                     <div className="flex flex-col">
                       <span className="text-[9px] md:text-xs text-text-primary/50 uppercase tracking-wider font-medium">Actual Rate</span>
-                      <span className="text-sm md:text-lg text-text-primary/60 line-through font-bold">₹1850</span>
+                      <span className="text-sm md:text-lg text-text-primary/60 line-through font-bold">₹2813</span>
                     </div>
                     <div className="h-6 w-px bg-gold-border/30" />
                     <div className="flex flex-col">
                       <span className="text-[9px] md:text-xs text-gold uppercase tracking-wider font-semibold">Offer Price</span>
-                      <span className="text-base md:text-3xl text-gold font-black">₹1250</span>
+                      <span className="text-base md:text-3xl text-gold font-black">₹1500</span>
                     </div>
                     <div className="ml-auto bg-gold/15 border border-gold/30 text-gold text-[9px] md:text-xs font-bold px-2 py-1 md:px-3 md:py-1.5 rounded-xl">
-                      Save ₹600 (32% Off)
+                      Save ₹1313 (46% Off)
                     </div>
                   </div>
 
@@ -282,7 +282,7 @@ export const OfferSlideOver: React.FC = () => {
                       Offer Claimed Successfully!
                     </h2>
                     <p className="text-[11px] md:text-sm text-text-primary/75 mt-1.5 md:mt-2 max-w-sm mx-auto">
-                      Here is your exclusive coupon code. Please copy it or book directly via WhatsApp to redeem your ₹600 discount.
+                      Here is your exclusive coupon code. Please copy it or book directly via WhatsApp to redeem your ₹1313 discount.
                     </p>
                   </div>
 
