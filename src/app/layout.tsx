@@ -177,7 +177,7 @@ export default function RootLayout({
       <head>
         <link
           rel="preload"
-          href="/assets/hero-poster.jpg"
+          href="/assets/hero-poster.webp"
           as="image"
         />
         <script

@@ -194,7 +194,7 @@ export const OfferSlideOver: React.FC = () => {
 
                   {/* Benefits List */}
                   <div className="space-y-2 md:space-y-3 pt-1 md:pt-2">
-                    <h4 className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-text-primary/70 mb-1">Therapy Benefits</h4>
+                    <h3 className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-text-primary/70 mb-1">Therapy Benefits</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 md:gap-3">
                       <div className="flex items-start gap-1.5 md:gap-2 text-[11px] md:text-sm text-text-primary/80">
                         <Sparkles size={14} className="text-gold shrink-0 mt-0.5 md:size-[16px]" />
@@ -217,7 +217,7 @@ export const OfferSlideOver: React.FC = () => {
 
                   {/* Booking Intake */}
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 md:space-y-4 pt-3 md:pt-4 border-t border-gold-border/20">
-                    <h4 className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-text-primary/70">Claim Your Offer</h4>
+                    <h3 className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-text-primary/70">Claim Your Offer</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                       <div>
                         <label htmlFor="offer-name" className="block text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-text-primary/60 mb-1 md:mb-1.5">

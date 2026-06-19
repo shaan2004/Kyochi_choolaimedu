@@ -44,7 +44,7 @@ export const BookingSection: React.FC = () => {
                   <MapPin size={18} aria-hidden="true" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-text-primary">Our Center</h4>
+                  <h3 className="text-sm font-semibold text-text-primary">Our Center</h3>
                   <p className="text-xs text-text-primary/60">No 14/5 Indira Gandhi 3rd St, Choolaimedu, Chennai 600094</p>
                 </div>
               </div>
@@ -54,7 +54,7 @@ export const BookingSection: React.FC = () => {
                   <Clock size={18} aria-hidden="true" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-text-primary">Opening Hours</h4>
+                  <h3 className="text-sm font-semibold text-text-primary">Opening Hours</h3>
                   <p className="text-xs text-text-primary/60">Mon - Sun: 10:00 AM - 8:00 PM</p>
                 </div>
               </div>
@@ -64,7 +64,7 @@ export const BookingSection: React.FC = () => {
                   <Phone size={18} aria-hidden="true" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-semibold text-text-primary">Call Desk</h4>
+                  <h3 className="text-sm font-semibold text-text-primary">Call Desk</h3>
                   <p className="text-xs text-text-primary/60">+91 95660 01066</p>
                 </div>
               </div>

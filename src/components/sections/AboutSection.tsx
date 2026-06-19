@@ -31,7 +31,7 @@ export const AboutSection: React.FC = () => {
             <div className="absolute -inset-4 border border-gold/15 rounded-2xl pointer-events-none group-hover:border-gold/35 transition-all duration-500" />
             <div className="relative aspect-square w-full overflow-hidden rounded-xl border border-gold-border/80 bg-surface-dark shadow-2xl">
               <Image
-                src="/assets/about-therapist.png"
+                src="/assets/about-therapist.webp"
                 alt="Tactile reflexology session highlighting the precision of visually impaired therapists at Kyochi"
                 fill
                 loading="lazy"

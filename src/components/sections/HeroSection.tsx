@@ -56,7 +56,7 @@ export const HeroSection: React.FC = () => {
         loop
         playsInline
         preload="none"
-        poster="/assets/hero-poster.jpg"
+        poster="/assets/hero-poster.webp"
         className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-95"
         aria-hidden="true"
       >

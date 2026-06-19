@@ -109,42 +109,44 @@ export const Footer: React.FC = () => {
           <h3 className="font-display text-lg font-semibold text-text-primary border-b border-gold-border/20 pb-2">
             Contact Us
           </h3>
-          <address className="not-italic space-y-3.5 text-sm">
-            <li className="flex items-start gap-2.5">
-              <MapPin size={18} className="text-gold shrink-0 mt-0.5" />
-              <div>
-                <p className="font-medium text-text-primary">Kyochi Choolaimedu</p>
-                <p className="text-xs text-text-primary/60 mt-0.5 leading-relaxed">
-                  No 14/5 Indira Gandhi 3rd Street,<br />
-                  Near MMDA Bus Depot, Choolaimedu,<br />
-                  Chennai, Tamil Nadu 600094
-                </p>
-                <a 
-                  href="https://maps.google.com/?q=Kyochi+Choolaimedu+Chennai" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs text-gold hover:text-gold-light mt-1.5 font-medium transition-colors"
-                >
-                  View on Google Maps <ExternalLink size={10} />
+          <address className="not-italic">
+            <ul className="space-y-3.5 text-sm">
+              <li className="flex items-start gap-2.5">
+                <MapPin size={18} className="text-gold shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-medium text-text-primary">Kyochi Choolaimedu</p>
+                  <p className="text-xs text-text-primary/60 mt-0.5 leading-relaxed">
+                    No 14/5 Indira Gandhi 3rd Street,<br />
+                    Near MMDA Bus Depot, Choolaimedu,<br />
+                    Chennai, Tamil Nadu 600094
+                  </p>
+                  <a 
+                    href="https://maps.google.com/?q=Kyochi+Choolaimedu+Chennai" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs text-gold hover:text-gold-light mt-1.5 font-medium transition-colors"
+                  >
+                    View on Google Maps <ExternalLink size={10} />
+                  </a>
+                </div>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Phone size={16} className="text-gold shrink-0" />
+                <a href="tel:+919566001066" className="hover:text-gold transition-colors">
+                  +91 95660 01066
                 </a>
-              </div>
-            </li>
-            <li className="flex items-center gap-2.5">
-              <Phone size={16} className="text-gold shrink-0" />
-              <a href="tel:+919566001066" className="hover:text-gold transition-colors">
-                +91 95660 01066
-              </a>
-            </li>
-            <li className="flex items-center gap-2.5">
-              <Mail size={16} className="text-gold shrink-0" />
-              <a href="mailto:kyochichoolaimedu@gmail.com" className="hover:text-gold transition-colors">
-                kyochichoolaimedu@gmail.com
-              </a>
-            </li>
-            <li className="flex items-center gap-2.5">
-              <Clock size={16} className="text-gold shrink-0" />
-              <span className="text-xs">Mon - Sun: 10:00 AM - 08:00 PM</span>
-            </li>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Mail size={16} className="text-gold shrink-0" />
+                <a href="mailto:kyochichoolaimedu@gmail.com" className="hover:text-gold transition-colors">
+                  kyochichoolaimedu@gmail.com
+                </a>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <Clock size={16} className="text-gold shrink-0" />
+                <span className="text-xs">Mon - Sun: 10:00 AM - 08:00 PM</span>
+              </li>
+            </ul>
           </address>
         </div>
 
