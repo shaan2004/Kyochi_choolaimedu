@@ -6,6 +6,7 @@ import { Menu, X, Phone, Clock, MapPin, Sparkles, Mail } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { OutlineButton } from './OutlineButton';
 import { cn } from '@/lib/utils';
+import { usePathname, useRouter } from 'next/navigation';
 
 const InstagramIcon: React.FC<{ size?: number; className?: string }> = ({ size = 20, className }) => (
   <svg
@@ -29,6 +30,8 @@ const InstagramIcon: React.FC<{ size?: number; className?: string }> = ({ size =
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,6 +54,21 @@ export const Navbar: React.FC = () => {
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
+
+    if (pathname !== '/') {
+      if (targetId === '#') {
+        router.push('/');
+      } else {
+        router.push(`/${targetId}`);
+      }
+      return;
+    }
+
+    if (targetId === '#') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     const element = document.getElementById(targetId.substring(1));
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -103,14 +121,14 @@ export const Navbar: React.FC = () => {
               onClick={(e) => handleLinkClick(e, '#')}
               className="flex items-center group cursor-pointer focus:outline-none focus:ring-1 focus:ring-gold rounded"
             >
-              <div className="relative w-32 h-10 md:w-36 md:h-12 group-hover:scale-105 transition-all duration-300">
+              <div className="relative w-40 h-20 md:w-56 md:h-28 group-hover:scale-105 transition-all duration-300">
                 <Image
-                  src="/assets/logo.png"
-                  alt="Kyochi Art of Healing"
+                  src="/assets/Kyochi_Choolaimedu.png"
+                  alt="Kyochi Choolaimedu Art of Healing"
                   fill
                   priority
                   className="object-contain"
-                  sizes="(max-width: 768px) 128px, 144px"
+                  sizes="(max-width: 768px) 192px, 224px"
                 />
               </div>
             </a>

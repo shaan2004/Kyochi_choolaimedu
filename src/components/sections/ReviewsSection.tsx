@@ -66,7 +66,7 @@ export const ReviewsSection: React.FC = () => {
               playsInline
               preload="none"
               className="w-full h-auto aspect-video object-contain"
-              aria-label="Kyochi client review video testimonial"
+              aria-label="Kyochi Choolaimedu client review video testimonial"
             >
               <track
                 kind="captions"

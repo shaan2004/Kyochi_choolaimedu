@@ -68,7 +68,7 @@ export const PopupBooking: React.FC = () => {
             <div className="relative w-full h-20 sm:h-44 shrink-0 overflow-hidden rounded-t-2xl sm:rounded-t-none">
               <Image 
                 src="/assets/og-image.jpg"
-                alt="Kyochi Healing Center"
+                alt="Kyochi Choolaimedu Healing Center"
                 fill
                 sizes="(max-width: 640px) 100vw, 512px"
                 className="object-cover"

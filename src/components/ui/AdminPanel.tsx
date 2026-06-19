@@ -359,8 +359,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   // Render Auth Loader
   if (isRefreshing) {
     return (
-      <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center">
-        <div className="glass-panel p-8 rounded-3xl border border-gold/30 text-center max-w-sm w-full mx-4">
+      <div className="w-full flex-grow flex items-center justify-center py-20">
+        <div className="glass-panel p-8 rounded-3xl border border-gold/30 text-center max-w-sm w-full mx-4 bg-surface-dark/90">
           <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-gold mx-auto mb-4" />
           <p className="text-text-primary/70 font-light text-sm">Securing administrative console...</p>
         </div>
@@ -371,8 +371,8 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
   // Render Login overlay if not logged in
   if (!token) {
     return (
-      <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-md flex items-center justify-center p-6">
-        <div className="glass-panel p-8 md:p-10 rounded-3xl border border-gold-border/40 shadow-2xl max-w-md w-full relative">
+      <div className="w-full flex-grow flex items-center justify-center py-12">
+        <div className="glass-panel p-8 md:p-10 rounded-3xl border border-gold-border/40 shadow-2xl max-w-md w-full relative bg-surface-dark/80">
           
           <button 
             onClick={onClose} 
@@ -384,10 +384,10 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
           <div className="text-center mb-8">
             <span className="text-[10px] uppercase tracking-widest text-gold font-bold">Secure Access Only</span>
             <h2 className="font-display text-2xl md:text-3xl font-bold text-text-primary mt-1">
-              Kyochi <span className="gold-shimmer-text">Admin</span>
+              Kyochi Choolaimedu <span className="gold-shimmer-text">Admin</span>
             </h2>
             <p className="text-xs text-text-primary/50 font-light mt-2">
-              Sign in to manage Kyochi's foot reflexology blog.
+              Sign in to manage Kyochi Choolaimedu's foot reflexology blog.
             </p>
           </div>
 
@@ -435,8 +435,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
 
   // Render Admin Dashboard
   return (
-    <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-2 sm:p-4 md:p-8">
-      <div className="glass-panel w-full max-w-5xl h-[95vh] md:h-[90vh] rounded-2xl md:rounded-3xl border border-gold-border/40 shadow-2xl flex flex-col overflow-hidden">
+    <div className="w-full min-h-screen bg-bg-dark flex flex-col">
         
         {/* Dashboard Header */}
         <header className="p-4 md:p-6 border-b border-gold-border/20 flex flex-wrap items-center justify-between gap-4 bg-surface-dark/40">
@@ -471,16 +470,16 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
         </header>
 
         {/* Content Container (List or Editor) */}
-        <div className="flex-grow overflow-y-auto p-6">
+        <div className="flex-grow overflow-y-auto p-6 md:p-12 lg:p-20">
           
           {isEditing ? (
             /* ========================================================
                EDITOR VIEW
                ======================================================== */
-            <form onSubmit={handleSavePost} className="space-y-6 max-w-4xl mx-auto">
+            <form onSubmit={handleSavePost} className="space-y-8 max-w-6xl mx-auto">
               
               <div className="flex items-center justify-between border-b border-gold-border/10 pb-4">
-                <h3 className="font-display text-lg font-bold text-text-primary">
+                <h3 className="font-display text-2xl font-bold text-text-primary">
                   {editingPost ? 'Modify Article' : 'Compose New Article'}
                 </h3>
                 <button
@@ -489,9 +488,9 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                     setIsEditing(false);
                     setEditingPost(null);
                   }}
-                  className="text-xs text-text-primary/60 hover:text-text-primary uppercase tracking-widest font-semibold flex items-center gap-1 cursor-pointer"
+                  className="text-sm text-text-primary/60 hover:text-text-primary uppercase tracking-widest font-semibold flex items-center gap-1 cursor-pointer"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="19" x2="5" y1="12" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="19" x2="5" y1="12" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
                   <span>Discard</span>
                 </button>
               </div>
@@ -504,21 +503,21 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
 
               {/* Title input */}
               <div>
-                <label className="block text-xs uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Title</label>
+                <label className="block text-sm uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Title</label>
                 <input
                   type="text"
                   value={editorTitle}
                   onChange={(e) => setEditorTitle(e.target.value)}
                   placeholder="e.g. 5 Benefits of Foot Reflexology for Sleep"
-                  className="w-full px-4 py-3 rounded-xl bg-surface-dark border border-gold-border/20 text-text-primary text-sm focus:border-gold focus:outline-none transition-colors"
+                  className="w-full px-5 py-4 rounded-xl bg-surface-dark border border-gold-border/20 text-text-primary text-base md:text-lg focus:border-gold focus:outline-none transition-colors"
                 />
               </div>
 
               {/* SEO Summary */}
               <div>
                 <div className="flex justify-between items-center mb-2">
-                  <label className="block text-xs uppercase tracking-widest font-semibold text-text-primary/80">SEO Summary / Meta Description</label>
-                  <span className={`text-[10px] ${editorSummary.length > 200 ? 'text-red-500' : 'text-text-primary/40'}`}>
+                  <label className="block text-sm uppercase tracking-widest font-semibold text-text-primary/80">SEO Summary / Meta Description</label>
+                  <span className={`text-xs ${editorSummary.length > 200 ? 'text-red-500' : 'text-text-primary/40'}`}>
                     {editorSummary.length} / 200 chars
                   </span>
                 </div>
@@ -527,7 +526,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                   onChange={(e) => setEditorSummary(e.target.value)}
                   placeholder="Write a concise SEO summary for browser snippets. Recommended under 160 characters."
                   rows={2}
-                  className="w-full px-4 py-3 rounded-xl bg-surface-dark border border-gold-border/20 text-text-primary text-sm focus:border-gold focus:outline-none transition-colors resize-none"
+                  className="w-full px-5 py-4 rounded-xl bg-surface-dark border border-gold-border/20 text-text-primary text-base focus:border-gold focus:outline-none transition-colors resize-none"
                 />
               </div>
 
@@ -536,7 +535,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                 
                 {/* File picker */}
                 <div>
-                  <label className="block text-xs uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Featured Image</label>
+                  <label className="block text-sm uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Featured Image</label>
                   <input
                     type="file"
                     ref={fileInputRef}
@@ -550,9 +549,9 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
                       disabled={isUploadingImage}
-                      className="px-4 py-3 rounded-xl border border-gold-border/30 bg-surface-dark text-xs font-semibold text-text-primary hover:bg-gold/15 transition-all flex items-center gap-2 cursor-pointer disabled:opacity-50"
+                      className="px-5 py-4 rounded-xl border border-gold-border/30 bg-surface-dark text-sm font-semibold text-text-primary hover:bg-gold/15 transition-all flex items-center gap-2 cursor-pointer disabled:opacity-50"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
                       <span>{isUploadingImage ? 'Uploading image...' : 'Choose Image File'}</span>
                     </button>
                     
@@ -578,9 +577,9 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
 
                 {/* Image Preview */}
                 <div>
-                  <label className="block text-xs uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Preview</label>
+                  <label className="block text-sm uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Preview</label>
                   {editorImage ? (
-                    <div className="relative h-28 w-56 rounded-xl overflow-hidden border border-gold-border/30 bg-surface-dark">
+                    <div className="relative h-40 w-72 rounded-xl overflow-hidden border border-gold-border/30 bg-surface-dark">
                       <Image 
                         src={editorImage} 
                         alt="Featured upload preview" 
@@ -589,7 +588,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                       />
                     </div>
                   ) : (
-                    <div className="h-28 w-56 rounded-xl border border-dashed border-gold-border/30 flex items-center justify-center bg-surface-dark/20 text-text-primary/30 text-xs font-light">
+                    <div className="h-40 w-72 rounded-xl border border-dashed border-gold-border/30 flex items-center justify-center bg-surface-dark/20 text-text-primary/30 text-sm font-light">
                       No image selected
                     </div>
                   )}
@@ -600,11 +599,11 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
               {/* Status and Actions Row */}
               <div className="flex flex-wrap items-center gap-6">
                 <div>
-                  <label className="block text-xs uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Publishing Status</label>
+                  <label className="block text-sm uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Publishing Status</label>
                   <select
                     value={editorStatus}
                     onChange={(e) => setEditorStatus(e.target.value as any)}
-                    className="px-4 py-2.5 rounded-xl bg-surface-dark border border-gold-border/20 text-text-primary text-sm focus:border-gold focus:outline-none transition-colors cursor-pointer"
+                    className="px-5 py-3 rounded-xl bg-surface-dark border border-gold-border/20 text-text-primary text-base focus:border-gold focus:outline-none transition-colors cursor-pointer"
                   >
                     <option value="Draft">Draft (Hidden from readers)</option>
                     <option value="Published">Published (Publicly visible)</option>
@@ -614,7 +613,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
 
               {/* Rich Text Editor */}
               <div>
-                <label className="block text-xs uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Article Body (Rich Text)</label>
+                <label className="block text-sm uppercase tracking-widest font-semibold text-text-primary/80 mb-2">Article Body (Rich Text)</label>
                 
                 {/* WYSIWYG Styling Toolbar */}
                 <div className="flex flex-wrap gap-1 bg-surface-dark border border-gold-border/20 p-2 rounded-t-xl border-b-0">
@@ -706,7 +705,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                   ref={editorRef}
                   contentEditable
                   suppressContentEditableWarning
-                  className="w-full min-h-[300px] max-h-[500px] overflow-y-auto px-6 py-5 rounded-b-xl border border-gold-border/20 bg-bg-dark text-text-primary/95 text-base leading-relaxed focus:border-gold focus:outline-none focus:ring-0 prose-editor"
+                  className="w-full min-h-[400px] max-h-[700px] overflow-y-auto px-6 py-5 rounded-b-xl border border-gold-border/20 bg-bg-dark text-text-primary/95 text-lg leading-relaxed focus:border-gold focus:outline-none focus:ring-0 prose-editor"
                 />
               </div>
 
@@ -928,7 +927,6 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
           )}
 
         </div>
-      </div>
       
       {/* Editor CSS overrides for contentEditable */}
       <style>{`

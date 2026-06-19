@@ -68,19 +68,19 @@ export const FloatingSocials: React.FC = () => {
       </motion.button>
       <FloatButton
         icon={<MessageCircle size={20} className="fill-current" />}
-        href="https://wa.me/919566001066?text=Hello%20Kyochi!%20%F0%9F%8C%BF%20I'd%20like%20to%20know%20more%20about%20your%20reflexology%20services."
+        href="https://wa.me/919566001066?text=Hello%20Kyochi%20Choolaimedu!%20%F0%9F%8C%BF%20I'd%20like%20to%20know%20more%20about%20your%20reflexology%20services."
         ariaLabel="Book reflexology session on WhatsApp"
         className="bg-emerald-600/90 text-white border-emerald-500/30 hover:bg-emerald-500 hover:text-white hover:border-emerald-400 hover:shadow-[0_4px_15px_rgba(16,185,129,0.4)]"
       />
       <FloatButton
         icon={<InstagramIcon size={20} />}
         href="https://www.instagram.com/kyochi_choolaimedu/"
-        ariaLabel="Follow Kyochi on Instagram"
+        ariaLabel="Follow Kyochi Choolaimedu on Instagram"
       />
       <FloatButton
         icon={<FacebookIcon size={20} />}
         href="https://www.facebook.com/profile.php?id=61589085099683"
-        ariaLabel="Follow Kyochi on Facebook"
+        ariaLabel="Follow Kyochi Choolaimedu on Facebook"
       />
       <FloatButton
         icon={<Phone size={20} />}

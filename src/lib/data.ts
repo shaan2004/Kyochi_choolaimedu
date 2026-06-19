@@ -178,7 +178,7 @@ export const REVIEWS: Review[] = [
     name: 'Varun V',
     stars: 5,
     serviceTag: 'Face Detox',
-    testimonial: 'It\'s my 4th week doing face detox and the results are improving week by week. As my work consists of a lot of travelling during the day in the hot sun with dust and pollution, my face gets puffy by night. This face detox really helped me regain my actual debloated face back. Thank you Kyochi, especially Gopal sir!',
+    testimonial: 'It\'s my 4th week doing face detox and the results are improving week by week. As my work consists of a lot of travelling during the day in the hot sun with dust and pollution, my face gets puffy by night. This face detox really helped me regain my actual debloated face back. Thank you Kyochi Choolaimedu, especially Gopal sir!',
     date: '6 Days Ago',
     location: 'Choolaimedu'
   },
@@ -255,7 +255,7 @@ export const FAQS: FAQ[] = [
   },
   {
     id: 'faq-2',
-    question: 'Why does Kyochi highlight visually impaired therapists?',
+    question: 'Why does Kyochi Choolaimedu highlight visually impaired therapists?',
     answer: 'Visually impaired therapists naturally possess a heightened, exceptionally developed tactile sense. Free from visual distractions, their hands can feel minute crystalline deposits, temperature shifts, and tightness in muscle fibers that others might miss. This allows them to execute highly precise reflex zone therapy.'
   },
   {

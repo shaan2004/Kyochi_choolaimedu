@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: 'Kyochi Choolaimedu | Foot Reflexology Center Chennai',
-    template: '%s | Kyochi — Art of Healing',
+    template: '%s | Kyochi Choolaimedu — Art of Healing',
   },
   description: 'Best foot reflexology center in Choolaimedu Chennai. Expert therapists, 10,000+ happy clients, 4.9★ Google rating. Relaxation, De-stress, Chronic Pain, Detox reflexology. Book now!',
   keywords: [
@@ -47,12 +47,12 @@ export const metadata: Metadata = {
     'plantar fasciitis treatment Chennai',
     'foot reflexology near me Chennai',
   ],
-  authors: [{ name: 'Kyochi Art of Healing' }],
+  authors: [{ name: 'Kyochi Choolaimedu Art of Healing' }],
   openGraph: {
     title: 'Kyochi — Foot Reflexology Center | Choolaimedu, Chennai',
     description: "India's leading foot reflexology brand. 10,000+ clients, 4.9★ rating, 150+ trained therapists.",
     url: SITE_URL,
-    siteName: 'Kyochi',
+    siteName: 'Kyochi Choolaimedu',
     locale: 'en_IN',
     type: 'website',
     images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "HealthAndBeautyBusiness",
-  "name": "Kyochi — Art of Healing",
+  "name": "Kyochi Choolaimedu — Art of Healing",
   "description": "Foot reflexology center in Choolaimedu, Chennai",
   "url": SITE_URL,
   "telephone": "+919566001066",
@@ -130,7 +130,7 @@ const faqJsonLd = {
     },
     {
       "@type": "Question",
-      "name": "Why does Kyochi highlight visually impaired therapists?",
+      "name": "Why does Kyochi Choolaimedu highlight visually impaired therapists?",
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Visually impaired therapists naturally possess a heightened, exceptionally developed tactile sense. Free from visual distractions, their hands can feel minute crystalline deposits and tightness in muscle fibers, allowing highly precise reflex zone therapy."

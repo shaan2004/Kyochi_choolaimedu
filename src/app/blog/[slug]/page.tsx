@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     
     if (!post) {
       return {
-        title: 'Blog Post Not Found | Kyochi Art of Healing',
+        title: 'Blog Post Not Found | Kyochi Choolaimedu Art of Healing',
       };
     }
 
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     const postUrl = `${SITE_URL}/blog/${slug}`;
 
     return {
-      title: `${post.title} | Kyochi Reflexology Blog`,
+      title: `${post.title} | Kyochi Choolaimedu Reflexology Blog`,
       description: post.summary,
       alternates: {
         canonical: postUrl,
@@ -57,7 +57,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
     };
   } catch (e) {
     return {
-      title: 'Kyochi Reflexology Blog',
+      title: 'Kyochi Choolaimedu Reflexology Blog',
     };
   }
 }
@@ -105,7 +105,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
     "dateModified": post.updatedAt || post.publishedAt || post.createdAt,
     "author": [{
       "@type": "Person",
-      "name": post.author?.username || 'Kyochi Specialist',
+      "name": post.author?.username || 'Kyochi Choolaimedu Specialist',
       "url": "https://www.kyochi.in/about"
     }]
   };
@@ -161,7 +161,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 </div>
                 <div>
                   <p className="font-semibold text-text-primary text-xs">
-                    By {post.author?.username || 'Kyochi Specialist'}
+                    By {post.author?.username || 'Kyochi Choolaimedu Specialist'}
                   </p>
                   <p className="text-[10px] text-text-primary/50 uppercase tracking-widest font-light">
                     {post.author?.role || 'Author'}
@@ -239,7 +239,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
           <div className="mt-16 pt-8 border-t border-gold-border/20 flex flex-col sm:flex-row items-center justify-between gap-6">
             <div>
               <h4 className="font-display text-xl font-bold text-text-primary">
-                Experience Kyochi Healing
+                Experience Kyochi Choolaimedu Healing
               </h4>
               <p className="text-sm text-text-primary/70 font-light mt-1">
                 Book a professional reflexology session in Chennai today.

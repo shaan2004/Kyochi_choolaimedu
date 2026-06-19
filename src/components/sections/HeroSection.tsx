@@ -40,7 +40,7 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       ref={containerRef}
-      aria-label="Hero — Welcome to Kyochi"
+      aria-label="Hero — Welcome to Kyochi Choolaimedu"
       className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-bg-dark"
     >
       

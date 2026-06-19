@@ -90,7 +90,7 @@ export const OfferSlideOver: React.FC = () => {
 
   const handleWhatsAppClaim = (data: OfferFormData, codeToSend?: string) => {
     const code = codeToSend || offerCode;
-    const prefix = 'Hello Kyochi! 🌿\n\nI\'d like to claim the Ghee Therapy Offer!\n\n';
+    const prefix = 'Hello Kyochi Choolaimedu! 🌿\n\nI\'d like to claim the Ghee Therapy Offer!\n\n';
     const fields = [
       `*Name:* ${data.name}`,
       `*Phone:* ${data.phone}`,

@@ -72,7 +72,7 @@ export const BlogSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center mb-16 max-w-2xl mx-auto">
-          <SectionTag text="Kyochi Articles" className="mb-4" />
+          <SectionTag text="Kyochi Choolaimedu Articles" className="mb-4" />
           <h2 className="font-display text-3xl md:text-[44px] font-bold tracking-tight text-text-primary leading-tight">
             Art of Healing <span className="gold-shimmer-text">Insights</span>
           </h2>

@@ -4,12 +4,19 @@ import React from 'react';
 import Image from 'next/image';
 import { Sparkles, Phone, Mail, MapPin, Clock, ExternalLink } from 'lucide-react';
 import { SERVICES } from '@/lib/data';
+import { usePathname, useRouter } from 'next/navigation';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const router = useRouter();
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault();
+    if (pathname !== '/') {
+      router.push(`/${targetId}`);
+      return;
+    }
     const element = document.getElementById(targetId.substring(1));
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -26,13 +33,13 @@ export const Footer: React.FC = () => {
         {/* Left Column: Brand & Tagline */}
         <div className="space-y-4">
           <div className="flex items-center">
-            <div className="relative w-32 h-10">
+            <div className="relative w-48 h-24 md:w-64 md:h-36">
               <Image
-                src="/assets/logo.png"
-                alt="Kyochi Art of Healing — Foot Reflexology Center"
+                src="/assets/Kyochi_Choolaimedu.png"
+                alt="Kyochi Choolaimedu Art of Healing — Foot Reflexology Center"
                 fill
                 className="object-contain"
-                sizes="128px"
+                sizes="(max-width: 768px) 192px, 224px"
               />
             </div>
           </div>
@@ -158,7 +165,7 @@ export const Footer: React.FC = () => {
           Serving clients across Choolaimedu, Anna Nagar, Kilpauk, Nungambakkam, Aminjikarai, Chetpet, Kodambakkam, West Mambalam, T-Nagar, and all of Chennai, Tamil Nadu.
         </p>
         <p className="font-light">
-          &copy; {currentYear} Kyochi — Art of Healing. All Rights Reserved.
+          &copy; {currentYear} Kyochi Choolaimedu — Art of Healing. All Rights Reserved.
         </p>
       </div>
     </footer>
