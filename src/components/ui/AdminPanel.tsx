@@ -160,7 +160,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
     }
 
     // Mime type validation
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+    const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
     if (!allowedTypes.includes(file.type)) {
       setImageError('Only JPG, PNG, and WEBP image formats are allowed.');
       if (fileInputRef.current) fileInputRef.current.value = '';
@@ -541,7 +541,7 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({ onClose }) => {
                     type="file"
                     ref={fileInputRef}
                     onChange={handleImageUpload}
-                    accept="image/jpeg,image/png,image/webp"
+                    accept="image/jpeg,image/jpg,image/png,image/webp,.jpg,.jpeg,.png,.webp"
                     className="hidden"
                   />
                   

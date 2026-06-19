@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
-import { writeFile, mkdir } from 'fs/promises';
-import { join, extname } from 'path';
+import { extname } from 'path';
+import { connectToDatabase } from '@/lib/db';
+import { Image } from '@/lib/models/Image';
 import { verifyAccessToken, getCorsHeaders } from '@/lib/security';
 
 function getAuthenticatedUser(request: Request) {
@@ -77,21 +78,22 @@ export async function POST(request: Request) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // 7. Write to directory on disk
-    const uploadDir = join(process.cwd(), 'public', 'uploads');
+    // 7. Save to MongoDB
+    await connectToDatabase();
     
-    // Ensure upload directory exists
-    await mkdir(uploadDir, { recursive: true });
-    
-    const filepath = join(uploadDir, sanitizedFilename);
-    await writeFile(filepath, buffer);
+    const newImage = await Image.create({
+      filename: sanitizedFilename,
+      contentType: file.type,
+      data: buffer,
+      size: file.size,
+    });
 
-    console.log(`[UPLOAD] Image saved successfully to ${filepath}`);
+    console.log(`[UPLOAD] Image saved successfully to MongoDB with ID ${newImage._id}`);
 
     return NextResponse.json(
       {
         message: 'File uploaded successfully',
-        url: `/uploads/${sanitizedFilename}`,
+        url: `/api/images/${newImage._id}`,
       },
       { status: 200, headers: corsHeaders }
     );
