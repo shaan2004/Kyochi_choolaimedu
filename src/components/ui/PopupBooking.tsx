@@ -70,7 +70,7 @@ export const PopupBooking: React.FC = () => {
                 src="/assets/og-image.jpg"
                 alt="Kyochi Choolaimedu Healing Center"
                 fill
-                sizes="(max-width: 640px) 100vw, 512px"
+                sizes="(max-width: 640px) calc(100vw - 32px), 512px"
                 className="object-cover"
                 priority
               />

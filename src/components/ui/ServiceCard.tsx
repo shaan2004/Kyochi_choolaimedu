@@ -84,7 +84,8 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service, onBook, prior
           src={bgImage}
           alt={title}
           fill
-          sizes="(max-width: 768px) 50vw, 33vw"
+          sizes="(max-width: 640px) calc(50vw - 30px), (max-width: 1024px) calc(50vw - 40px), 370px"
+          quality={70}
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
           priority={priority}
           loading={priority ? 'eager' : 'lazy'}

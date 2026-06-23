@@ -20,18 +20,18 @@ export const revalidate = 3600; // Cache blog pages for 1 hour (ISR)
 // -------------------------------------------------------------
 export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
   const { slug } = await params;
-  
+
   try {
     await connectToDatabase();
     const post = await BlogPost.findOne({ slug, status: 'Published' });
-    
+
     if (!post) {
       return {
         title: 'Blog Post Not Found | Kyochi Choolaimedu Art of Healing',
       };
     }
 
-    const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kyochi.in';
+    const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kyochichoolaimedu.com';
     const postUrl = `${SITE_URL}/blog/${slug}`;
 
     return {
@@ -73,7 +73,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
   const { slug } = await params;
 
   await connectToDatabase();
-  
+
   // Find published post
   const post = await BlogPost.findOne({ slug, status: 'Published' })
     .populate('author', 'username role');
@@ -92,7 +92,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
     hour12: true,
   };
 
-  const formattedDate = post.publishedAt 
+  const formattedDate = post.publishedAt
     ? new Date(post.publishedAt).toLocaleString('en-IN', dateOptions)
     : new Date(post.createdAt).toLocaleString('en-IN', dateOptions);
 
@@ -106,7 +106,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
     "author": [{
       "@type": "Person",
       "name": post.author?.username || 'Kyochi Choolaimedu Specialist',
-      "url": "https://www.kyochi.in/about"
+      "url": "https://kyochichoolaimedu.com/about"
     }]
   };
 
@@ -117,10 +117,10 @@ export default async function BlogPage({ params }: BlogPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
       />
       <Navbar />
-      
+
       <main id="main-content" className="flex-grow pt-36 md:pt-40 pb-20 bg-bg-dark">
         <div className="max-w-4xl mx-auto px-6 relative z-10">
-          
+
           {/* Back Button */}
           <Link
             href="/#blog"
@@ -148,7 +148,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
             <span className="inline-block px-3 py-1 rounded-full bg-gold/10 border border-gold-border/20 text-gold text-xs font-semibold tracking-wider uppercase mb-4">
               Wellness & Healing
             </span>
-            
+
             <h1 className="font-display text-3xl md:text-5xl font-bold text-text-primary leading-tight mb-6">
               {post.title}
             </h1>
@@ -168,9 +168,9 @@ export default async function BlogPage({ params }: BlogPageProps) {
                   </p>
                 </div>
               </div>
-              
+
               <div className="h-4 w-px bg-gold-border/20 hidden sm:block" />
-              
+
               <div className="flex items-center gap-1.5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -223,13 +223,13 @@ export default async function BlogPage({ params }: BlogPageProps) {
               fill
               priority
               className="object-cover"
-              sizes="(max-w-4xl) 100vw, 896px"
+              sizes="(max-width: 896px) 100vw, 896px"
             />
           </div>
 
           {/* Article Content */}
           <article className="prose-container">
-            <div 
+            <div
               className="blog-content text-text-primary/90 font-light text-base md:text-lg leading-relaxed space-y-6"
               dangerouslySetInnerHTML={{ __html: post.content }}
             />
@@ -245,7 +245,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                 Book a professional reflexology session in Chennai today.
               </p>
             </div>
-            
+
             <Link
               href="/#booking"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gold text-black font-semibold text-sm hover:bg-gold-light hover:shadow-[0_4px_20px_rgba(201,168,76,0.3)] transition-all duration-300 cursor-pointer"
@@ -335,7 +335,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
           font-size: 1.15rem;
         }
       `}</style>
-      
+
       <Footer />
     </>
   );

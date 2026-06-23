@@ -19,7 +19,7 @@ const outfit = Outfit({
 
 // ✅ Change this ONE env variable when deploying to your real domain.
 // Set NEXT_PUBLIC_SITE_URL in your hosting platform (Vercel, Netlify, etc.)
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kyochi.in';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kyochichoolaimedu.com';
 
 // SEO Metadata Configuration
 export const metadata: Metadata = {

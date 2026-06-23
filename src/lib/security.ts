@@ -2,7 +2,7 @@ import jwt from 'jsonwebtoken';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'fallback_secret_key_12345';
 const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'fallback_refresh_secret_key_54321';
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kyochi.in';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kyochichoolaimedu.com';
 
 // -------------------------------------------------------------
 // JWT Token Utilities

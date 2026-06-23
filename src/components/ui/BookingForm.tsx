@@ -59,7 +59,13 @@ export const BookingForm: React.FC<BookingFormProps> = ({
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className={cn("space-y-3 md:space-y-4", className)}>
+    <form 
+      onSubmit={handleSubmit(onSubmit)} 
+      className={cn("space-y-3 md:space-y-4", className)}
+      toolname="bookReflexologySession"
+      tooldescription="Submits a booking request for a Japanese reflexology or foot therapy session at Kyochi Choolaimedu, generating a pre-filled WhatsApp message for final confirmation."
+      toolautosubmit="true"
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
         <div>
           <label htmlFor={`${idPrefix}name`} className="block text-[10px] md:text-xs font-semibold uppercase tracking-widest text-text-primary/70 mb-1.5 md:mb-2">
@@ -70,6 +76,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             type="text"
             placeholder="Your full name"
             autoComplete="name"
+            toolparamdescription="The full name of the customer booking the appointment."
             {...register('name', {
               required: 'Name is required',
               minLength: { value: 2, message: 'Name must be at least 2 characters' },
@@ -95,6 +102,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             type="tel"
             placeholder="9876543210"
             autoComplete="tel"
+            toolparamdescription="The 10-digit Indian mobile phone number of the customer."
             {...register('phone', {
               required: 'Phone number is required',
               pattern: {
@@ -121,6 +129,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
         </label>
         <select
           id={`${idPrefix}service-select`}
+          toolparamdescription="The selected Japanese reflexology or therapeutic foot massage service."
           {...register('service', { required: 'Please select a service' })}
           suppressHydrationWarning
           className={cn(
@@ -149,6 +158,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
           id={`${idPrefix}message`}
           placeholder="e.g. Plantar Fasciitis, foot fatigue, lower back pain, etc."
           rows={2}
+          toolparamdescription="Optional specific health concerns such as plantar fasciitis, heel pain, diabetic foot discomfort, body heat, or fatigue."
           {...register('message')}
           suppressHydrationWarning
           className={cn(

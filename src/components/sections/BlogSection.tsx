@@ -113,7 +113,7 @@ export const BlogSection: React.FC = () => {
                       alt={featuredPost.title}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-700"
-                      sizes="(max-w-768px) 100vw, 450px"
+                      sizes="(max-width: 768px) 100vw, 450px"
                     />
                     <div className="absolute top-3 left-3 bg-gold px-2.5 py-0.5 rounded-full text-[9px] font-bold text-black uppercase tracking-wider">
                       Featured
@@ -202,7 +202,7 @@ export const BlogSection: React.FC = () => {
                           alt={post.title}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
-                          sizes="(max-w-768px) 160px, 320px"
+                          sizes="(max-width: 768px) 160px, 320px"
                         />
                       </div>
 

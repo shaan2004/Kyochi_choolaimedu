@@ -11,6 +11,16 @@ import { cn } from '@/lib/utils';
 export const HeroSection: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkDesktop = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+    checkDesktop();
+    window.addEventListener('resize', checkDesktop, { passive: true });
+    return () => window.removeEventListener('resize', checkDesktop);
+  }, []);
 
   useEffect(() => {
     // Intersection observer to play/pause video depending on viewport to save CPU/data
@@ -35,7 +45,7 @@ export const HeroSection: React.FC = () => {
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [isDesktop]);
 
   return (
     <section
@@ -48,20 +58,29 @@ export const HeroSection: React.FC = () => {
       <div className="absolute top-28 left-6 w-5 h-5 border-t border-l border-gold/30 pointer-events-none z-20" />
       <div className="absolute top-28 right-6 w-5 h-5 border-t border-r border-gold/30 pointer-events-none z-20" />
       
-      {/* Background Video */}
-      <video
-        ref={videoRef}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="none"
-        poster="/assets/hero-poster.webp"
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-95"
-        aria-hidden="true"
-      >
-        <source src="/assets/vid.mp4" type="video/mp4" />
-      </video>
+      {/* Background Video (Desktop) or Poster Image (Mobile) */}
+      {isDesktop ? (
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/assets/hero-poster.webp"
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-95"
+          aria-hidden="true"
+        >
+          <source src="/assets/vid.mp4" type="video/mp4" />
+        </video>
+      ) : (
+        <img
+          src="/assets/hero-poster.webp"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none opacity-95"
+          aria-hidden="true"
+        />
+      )}
 
 
 

@@ -127,8 +127,9 @@ export const Navbar: React.FC = () => {
                   alt="Kyochi Choolaimedu Art of Healing"
                   fill
                   priority
+                  quality={70}
                   className="object-contain object-left scale-[1.7] md:scale-[2] origin-left"
-                  sizes="(max-width: 768px) 192px, 224px"
+                  sizes="(max-width: 768px) 65px, 96px"
                 />
               </div>
             </a>

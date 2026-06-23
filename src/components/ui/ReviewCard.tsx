@@ -36,10 +36,10 @@ export const ReviewCard: React.FC<ReviewCardProps> = ({ review }) => {
         className="hidden"
       >
         <span itemProp="name">Kyochi Choolaimedu — Art of Healing</span>
-        <span itemProp="url">https://www.kyochi.in</span>
+        <span itemProp="url">https://kyochichoolaimedu.com</span>
         <span itemProp="telephone">+919566001066</span>
         <span itemProp="priceRange">₹₹</span>
-        <meta itemProp="image" content="https://www.kyochi.in/assets/Kyochi_Choolaimedu.png" />
+        <meta itemProp="image" content="https://kyochichoolaimedu.com/assets/Kyochi_Choolaimedu.png" />
         <span
           itemProp="address"
           itemScope

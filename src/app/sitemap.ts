@@ -2,7 +2,7 @@ import { MetadataRoute } from 'next';
 import { connectToDatabase } from '@/lib/db';
 import { BlogPost } from '@/lib/models/BlogPost';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kyochi.in';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kyochichoolaimedu.com';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes: MetadataRoute.Sitemap = [

@@ -151,7 +151,7 @@ export const OfferSlideOver: React.FC = () => {
                 src="/assets/ghee.png"
                 alt="Ghee Therapy Offer"
                 fill
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes="(max-width: 768px) calc(100vw - 32px), 440px"
                 className="object-cover"
                 priority
               />
@@ -216,7 +216,13 @@ export const OfferSlideOver: React.FC = () => {
                   </div>
 
                   {/* Booking Intake */}
-                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-3 md:space-y-4 pt-3 md:pt-4 border-t border-gold-border/20">
+                  <form 
+                    onSubmit={handleSubmit(onSubmit)} 
+                    className="space-y-3 md:space-y-4 pt-3 md:pt-4 border-t border-gold-border/20"
+                    toolname="claimLaunchOffer"
+                    tooldescription="Claims the special launch offer for traditional Kasa Ghee Therapy at Kyochi Choolaimedu, giving a 46% discount, and generates an offer code to be sent via WhatsApp."
+                    toolautosubmit="true"
+                  >
                     <h3 className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-text-primary/70">Claim Your Offer</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                       <div>
@@ -227,6 +233,7 @@ export const OfferSlideOver: React.FC = () => {
                           id="offer-name"
                           type="text"
                           placeholder="Your name"
+                          toolparamdescription="The full name of the user claiming the Ghee Therapy offer."
                           {...register('name', { required: 'Name is required' })}
                           className="w-full px-3.5 py-2.5 md:px-4 md:py-3 bg-bg-dark border border-gold-border/60 text-text-primary rounded-xl text-xs md:text-sm focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/15"
                         />
@@ -242,6 +249,7 @@ export const OfferSlideOver: React.FC = () => {
                           id="offer-phone"
                           type="tel"
                           placeholder="10-digit number"
+                          toolparamdescription="The 10-digit Indian mobile number of the user claiming the Ghee Therapy offer."
                           {...register('phone', {
                             required: 'Phone number is required',
                             pattern: {

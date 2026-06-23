@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.kyochi.in';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://kyochichoolaimedu.com';
 
 /**
  * Dynamic robots.txt generation via Next.js App Router.
@@ -21,13 +21,9 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
       {
-        // Block AI training crawlers
+        // Block AI model training dataset scrapers (keeps search assistants active)
         userAgent: [
-          'GPTBot',
-          'ChatGPT-User',
           'CCBot',
-          'anthropic-ai',
-          'Claude-Web',
           'Omgilibot',
           'Omgili',
           'FacebookBot',

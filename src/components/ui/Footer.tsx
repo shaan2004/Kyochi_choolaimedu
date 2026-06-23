@@ -38,8 +38,9 @@ export const Footer: React.FC = () => {
                 src="/assets/Kyochi_Choolaimedu.png"
                 alt="Kyochi Choolaimedu Art of Healing — Foot Reflexology Center"
                 fill
+                quality={70}
                 className="object-contain"
-                sizes="(max-width: 768px) 192px, 224px"
+                sizes="(max-width: 768px) 77px, 115px"
               />
             </div>
           </div>
